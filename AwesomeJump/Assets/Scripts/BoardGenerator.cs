@@ -34,7 +34,7 @@ public class BoardGenerator : MonoBehaviour
     {
         while(generatedY < cameraPos.position.y+spawnRange) {
             Vector3 spawnPosition = new Vector3();
-            spawnPosition.y += generatedY + Random.Range(minY, maxY);
+            spawnPosition.y += (generatedY + Random.Range(minY, maxY));
             spawnPosition.x = Random.Range(-rangeX, rangeX);
             Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
             generatedY = spawnPosition.y;
