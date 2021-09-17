@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6747032478604492721}
   - component: {fileID: 6747032478604492722}
   - component: {fileID: 7903429928993759318}
-  - component: {fileID: 6747032478604492735}
+  - component: {fileID: 3206298956096362878}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -126,7 +126,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &6747032478604492735
+--- !u!114 &3206298956096362878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,3 +139,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JUMPFORCE: 10
+  camera: {fileID: 0}
