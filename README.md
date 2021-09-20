@@ -9,6 +9,10 @@ An endless jumping game created by [TeamSolid](https://github.com/TeamSolid526)
 - **World Creation:** Jiahao Li
 
 - **Movement(Jump/Hook):** Chen Ma, Shihao Peng, Lisha Xu, HuaiYa Chen, Jiahao Li.
+  - Lisha Xu: Laser
+  - Shihao Peng: UI
+  - HuaiYa Chen: Hook Optimization
+  - Jiahao Li: Board Generation OPtimization
 
 - **Scoring(Data transmit):** Tianyuan Yuan, Jiaqi Liu, Sucheng Wang, Yu Bai, Zhiyong Wang.
 
