@@ -15,6 +15,9 @@ An endless jumping game created by [TeamSolid](https://github.com/TeamSolid526)
   - Jiahao Li: Board Generation Optimization
 
 - **Scoring(Data transmit):** Tianyuan Yuan, Jiaqi Liu, Sucheng Wang, Yu Bai, Zhiyong Wang.
+  - Tianyuan Yuan: Score calculation and Textbox display
+  - Jiaqi Liu, Zhiyong Wang: Laser penalty value design
+  - Sucheng Wang, Yu Bai: Board value design
 
 ### Process
 - **World Creation:**
