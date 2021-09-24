@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
             targetBoard = hitData.transform.gameObject;
             float distance = ((Vector2)targetBoard.transform.position - (Vector2)transform.position).magnitude;
             hooked = true;
-            rb.gravityScale = 1;
+            // rb.gravityScale = 1;
           
             
             
@@ -73,11 +73,11 @@ public class Player : MonoBehaviour
        
         
         
-        // p.y += 0.5f;
-        // transform.position = p;
+        p.y += 0.5f;
+        transform.position = p;
         
         v.x = 0f;
-        v.y = 0f;
+        // v.y = 0f;
         rb.velocity = v;
         // rb.gravityScale = 0;
        
