@@ -12,7 +12,7 @@ An endless jumping game created by [TeamSolid](https://github.com/TeamSolid526)
   - Lisha Xu: Laser
   - Shihao Peng: UI
   - HuaiYa Chen: Hook Optimization
-  - Jiahao Li: Board Generation OPtimization
+  - Jiahao Li: Board Generation Optimization
 
 - **Scoring(Data transmit):** Tianyuan Yuan, Jiaqi Liu, Sucheng Wang, Yu Bai, Zhiyong Wang.
 
