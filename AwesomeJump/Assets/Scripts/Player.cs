@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     GameObject targetBoard;
     bool hooked = false;
 
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +28,22 @@ public class Player : MonoBehaviour
     {
         movement = Input.GetAxis("Horizontal") * speed;
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hitData = Physics2D.Raycast(new Vector2(worldMousePosition.x, worldMousePosition.y), Vector2.zero, 0);
+        Vector3 storeHitPos = hitData.point;
         if (!hooked) {
             direction = worldMousePosition - transform.position;
-            direction.Normalize();
+            // direction.Normalize();
             lr.SetPosition(0, transform.position);
-            lr.SetPosition(1, transform.position + (Vector3)direction * ropeLength);
+            lr.SetPosition(1, transform.position + (Vector3)direction);
         }
 
-        RaycastHit2D hitData = Physics2D.Raycast(new Vector2(worldMousePosition.x, worldMousePosition.y), Vector2.zero, 0);
-
-        if (hitData && Input.GetMouseButtonDown(0)) {
+       //storeHitPos: cannot click to the point below it
+        if (hitData && Input.GetMouseButtonDown(0) ) {
             targetBoard = hitData.transform.gameObject;
             float distance = ((Vector2)targetBoard.transform.position - (Vector2)transform.position).magnitude;
-            hooked = distance < ropeLength;
+            hooked = true;
+            rb.gravityScale = 1;
+          
             
             
         }
@@ -50,7 +54,12 @@ public class Player : MonoBehaviour
         // velocity.x = movement;
         // rb.velocity = velocity;
         if (hooked) {
+            if(direction.y < 10f){
             rb.velocity = direction * speed;
+            }
+            else{
+                rb.velocity = Vector3.Normalize(direction)*10f*speed;
+            }
         }
 
     }
@@ -59,11 +68,18 @@ public class Player : MonoBehaviour
         direction = Vector2.zero;
         hooked = false;
         Vector3 p = other.transform.position;
-        p.y += 0.5f;
-        transform.position = p;
         Vector2 v = rb.velocity;
-        v.x = 0f;
-        rb.velocity = v;
         
+       
+        
+        
+        // p.y += 0.5f;
+        // transform.position = p;
+        
+        v.x = 0f;
+        v.y = 0f;
+        rb.velocity = v;
+        // rb.gravityScale = 0;
+       
     }
 }
