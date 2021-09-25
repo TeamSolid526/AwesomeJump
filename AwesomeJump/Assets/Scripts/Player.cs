@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         }
 
        //storeHitPos: cannot click to the point below it
-        if (hitData && Input.GetMouseButtonDown(0) ) {
+        if (hitData && Input.GetMouseButtonDown(0) && storeHitPos.y > transform.position.y) {
             targetBoard = hitData.transform.gameObject;
             float distance = ((Vector2)targetBoard.transform.position - (Vector2)transform.position).magnitude;
             hooked = true;
