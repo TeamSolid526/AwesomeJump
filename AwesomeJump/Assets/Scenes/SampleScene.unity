@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   movement: 0
+  health: 100
 --- !u!1 &1507610539
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,9 +476,9 @@ MonoBehaviour:
   cameraPos: {fileID: 519420032}
   numberOfPlatforms: 3
   spawnRange: 10
-  rangeX: 5
+  rangeX: 3
   minY: 1.5
-  maxY: 2
+  maxY: 1.8
 --- !u!4 &1507610541
 Transform:
   m_ObjectHideFlags: 0
@@ -583,8 +584,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007396007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0, y: -0, z: 15}
   m_LocalScale: {x: 1.0350308, y: 1.0350308, z: 1.0350308}
+=======
+  m_LocalPosition: {x: -0.02, y: -0, z: 20}
+  m_LocalScale: {x: 0.63103676, y: 0.63103676, z: 0.63103676}
+>>>>>>> cbb42b53ca17fdb72cb105bcd8310c03dac9de5f
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
