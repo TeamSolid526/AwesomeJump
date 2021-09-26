@@ -478,7 +478,12 @@ MonoBehaviour:
   spawnRange: 10
   rangeX: 3
   minY: 1.5
+<<<<<<< HEAD
   maxY: 1.8
+=======
+  maxY: 2
+  doubleBoardWeight: 0.001
+>>>>>>> main
 --- !u!4 &1507610541
 Transform:
   m_ObjectHideFlags: 0
