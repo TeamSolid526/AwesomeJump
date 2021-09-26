@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   movement: 0
+  health: 100
 --- !u!1 &1507610539
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +479,7 @@ MonoBehaviour:
   rangeX: 5
   minY: 1.5
   maxY: 2
+  doubleBoardWeight: 0.001
 --- !u!4 &1507610541
 Transform:
   m_ObjectHideFlags: 0

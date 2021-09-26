@@ -42,6 +42,21 @@ public class Platform : MonoBehaviour
         }
     }
 
+    // Function to reverse the property of board
+    void ReverseProperty() {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (property.type == "buff") {
+            property.type = "debuff";
+            property.value = -property.value;
+            spriteRenderer.color = Color.red;
+        }
+        else {
+            property.type = "buff";
+            property.value = -property.value;
+            spriteRenderer.color = Color.blue;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
 
         if (collision.relativeVelocity.y < 0){
@@ -51,6 +66,8 @@ public class Platform : MonoBehaviour
                 velocity.y = JUMPFORCE;
                 rb.velocity = velocity;
             }
+            // Reverse board property if colliding with player
+            ReverseProperty();
         }
     }
 

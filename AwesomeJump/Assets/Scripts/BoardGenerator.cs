@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static System.Math;
 
 public class BoardGenerator : MonoBehaviour
 {
@@ -13,7 +14,21 @@ public class BoardGenerator : MonoBehaviour
     public float minY = 0.2f;
     public float maxY = 1.5f;
 
-    private float generatedY;
+    private float generatedY = 0;
+    private readonly System.Random _random = new System.Random();
+
+    // Attenuation rate of the possibility to generate double board
+    public float doubleBoardWeight = 1.0f;
+    // The min distance between double boards in the same height
+    public float doubleBoardGap = 0.5f;
+    // Record the last coordinateY generating double boards
+    private float prevDoubleY = 0;
+    
+
+    // Calculate the possibility to generate two board with the same height
+    private float Probability(int height) {
+        return (float)(Exp(-doubleBoardWeight*height)*100);
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -22,11 +37,23 @@ public class BoardGenerator : MonoBehaviour
 
         for (int i=0; i<numberOfPlatforms; i++) {
             spawnPosition.y += Random.Range(minY, maxY);
-            spawnPosition.x = Random.Range(-rangeX, rangeX);
-            Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+            float flag = _random.Next(100);
+            // Generate single board
+            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight*spawnPosition.y) {
+                spawnPosition.x = Random.Range(-rangeX, rangeX);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+            }
+            // Generate double boards
+            else {
+                spawnPosition.x = Random.Range(-rangeX, -doubleBoardGap/2);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+                spawnPosition.x = Random.Range(doubleBoardGap/2, rangeX);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+                // Update prevDoubleY if generating double 
+                prevDoubleY = spawnPosition.y;
+            }
+            generatedY = spawnPosition.y;
         }
-
-        generatedY = spawnPosition.y;
     }
 
     // Update is called once per frame
@@ -35,8 +62,21 @@ public class BoardGenerator : MonoBehaviour
         while(generatedY < cameraPos.position.y+spawnRange) {
             Vector3 spawnPosition = new Vector3();
             spawnPosition.y += (generatedY + Random.Range(minY, maxY));
-            spawnPosition.x = Random.Range(-rangeX, rangeX);
-            Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+            float flag = _random.Next(100);
+            // Generate single board
+            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight*spawnPosition.y) {
+                spawnPosition.x = Random.Range(-rangeX, rangeX);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+            }
+            // Generate double boards
+            else {
+                spawnPosition.x = Random.Range(-rangeX, -doubleBoardGap/2);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+                spawnPosition.x = Random.Range(doubleBoardGap/2, rangeX);
+                Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
+                // Update prevDoubleY if generating double 
+                prevDoubleY = spawnPosition.y;
+            }
             generatedY = spawnPosition.y;
         }
     }
