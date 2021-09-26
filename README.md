@@ -25,3 +25,5 @@ An endless jumping game created by [TeamSolid](https://github.com/TeamSolid526)
   - [x] Basic board generator
   - [x] Automatically destroy useless boards
   - [x] Initial board properties
+  - [x] Board generator optimization(get chance to generate double boards at the same height)
+  - [x] Board property reversion
