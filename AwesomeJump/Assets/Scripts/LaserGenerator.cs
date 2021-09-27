@@ -36,5 +36,4 @@ public class LaserGenerator : MonoBehaviour
 			generateLaser();
 		}
 	}
-	
 }
