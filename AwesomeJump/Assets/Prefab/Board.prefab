@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6747032478604492722}
   - component: {fileID: 7903429928993759318}
   - component: {fileID: 3206298956096362878}
+  - component: {fileID: -68109096734143766}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -138,5 +139,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e48d121af5344dcb25a26ce14a72da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JUMPFORCE: 10
-  camera: {fileID: 0}
+  JUMPFORCE: 0.1
+--- !u!61 &-68109096734143766
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747032478604492723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0057392865, y: -0.44714612}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.984375, y: 0.984375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.90353596, y: 1.3845433}
+  m_EdgeRadius: 0
