@@ -308,8 +308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8216efe4eb9ad4fe3a7cb7a4ff927033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1269469353}
-  smoothSpeed: 0.3
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -394,6 +392,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &583770615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583770610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b6ab299376e4d6c85627a800e3dc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1269469355}
 --- !u!1001 &1018147527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -485,6 +496,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6747032478604492722, guid: 493acf214c19b449791104cadabef5ca, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6747032478604492723, guid: 493acf214c19b449791104cadabef5ca, type: 3}
       propertyPath: m_Name
       value: Laser
@@ -502,8 +517,7 @@ PrefabInstance:
       value: 179.9
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 135736769155865010, guid: 493acf214c19b449791104cadabef5ca, type: 3}
-    - {fileID: 6747032478604492722, guid: 493acf214c19b449791104cadabef5ca, type: 3}
+    - {fileID: 0}
     - {fileID: 3206298956096362878, guid: 493acf214c19b449791104cadabef5ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 493acf214c19b449791104cadabef5ca, type: 3}
 --- !u!1 &1255539815
@@ -627,6 +641,7 @@ MonoBehaviour:
   speed: 3.5
   movement: 0
   health: 100
+  laser: {fileID: 583770610}
 --- !u!1 &1507610539
 GameObject:
   m_ObjectHideFlags: 0

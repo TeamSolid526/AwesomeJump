@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float speed = 2f;
     public float movement = 0f;
     public int health = 100;
+    public GameObject laser;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -44,6 +45,5 @@ public class Player : MonoBehaviour
             Debug.Log(health);
         }
             
-        
     }
 }

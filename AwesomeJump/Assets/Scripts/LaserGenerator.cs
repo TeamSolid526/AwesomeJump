@@ -17,16 +17,13 @@ public class LaserGenerator : MonoBehaviour
 	{
 		Vector3 genPosition = new Vector3(0, cameraPos.position.y+6f, 0);
 		Instantiate(Laser, genPosition, Quaternion.identity);
-		
 	}
 	
 	void Update(){
-		Debug.Log((int)timer+1);
 		timer -= Time.deltaTime;
 		if(timer <= 0){
 			generateLaser();
-			timer = 10.0f;
+			timer = 5.0f;
 		}
 	}
-	
 }
