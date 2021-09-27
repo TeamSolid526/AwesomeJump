@@ -26,6 +26,18 @@ public class Player : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = movement;
         rb.velocity = velocity;
+        if(rb.position.x > 4.0f){
+            Vector2 position = rb.position;
+            position.x = -4.0f;
+            rb.position = position;
+            //rb.MovePosition(-4.0f);
+        }
+        if(rb.position.x < -4.0f){
+            Vector2 position = rb.position;
+            position.x = 4.0f;
+            rb.position = position;
+            //rb.MovePosition(4.0f);
+        }
     }
 
     // void OnTriggerEnter2D(Collider2D other) {
