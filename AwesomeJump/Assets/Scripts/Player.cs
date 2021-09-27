@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float movement = 0f;
     public float ropeLength = 10f;
     public int health = 100;
+    public GameObject laser;
     Rigidbody2D rb;
     Vector3 worldMousePosition;
     Vector2 direction;
@@ -103,6 +104,6 @@ public class Player : MonoBehaviour
             health ++;
             Debug.Log(health);
         }
-        
+            
     }
 }
