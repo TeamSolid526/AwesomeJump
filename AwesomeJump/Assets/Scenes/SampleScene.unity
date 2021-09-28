@@ -308,6 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8216efe4eb9ad4fe3a7cb7a4ff927033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1269469353}
+  smoothSpeed: 0.3
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -640,8 +642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   movement: 0
+  ropeLength: 10
   health: 100
   laser: {fileID: 583770610}
+  JUMPFORCE: 10
 --- !u!1 &1507610539
 GameObject:
   m_ObjectHideFlags: 0
