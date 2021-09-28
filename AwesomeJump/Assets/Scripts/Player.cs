@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     Vector2 direction;
     LineRenderer lr;
     GameObject targetBoard;
+    Vector3 lineStartPoint;
     bool hooked = false;
 
     public float JUMPFORCE = 10f;
@@ -35,8 +36,6 @@ public class Player : MonoBehaviour
         if (!hooked) {
             direction = worldMousePosition - transform.position;
             // direction.Normalize();
-            lr.SetPosition(0, transform.position);
-            lr.SetPosition(1, transform.position + (Vector3)direction);
         }
 
        //storeHitPos: cannot click to the point below it
@@ -52,6 +51,9 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
+        lineStartPoint = rb.position;
+
+            lr.SetPosition(0, lineStartPoint);
          if(rb.position.x > 4.0f){
              Vector2 position = rb.position;
              position.x = -4.0f;
@@ -66,44 +68,49 @@ public class Player : MonoBehaviour
         if (hooked) {
  
             rb.velocity = direction * 2f;
-            
+            lr.SetPosition(1, targetBoard.transform.position);            
         }
-        else{
+        else {
             Vector2 velocity = rb.velocity;
             velocity.x = movement;
-        
             rb.velocity = velocity;
+            lr.SetPosition(1, lineStartPoint + (Vector3)direction);            
             
         }
 
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        direction = Vector2.zero;
-        hooked = false;
-        Vector3 p = other.transform.position;
-        Vector2 v = rb.velocity;
+        if (other.gameObject == targetBoard) {
+            direction = Vector2.zero;
+            hooked = false;
+            Vector3 p = other.transform.position;
+            Vector2 v = rb.velocity;
+            
         
-       
-        
-        
-        p.y += 0.1f;
-        
-        transform.position = p;
-        v.x = 0f;
-        v.y = 0f;
-        rb.velocity = v;
+            
+            
+            p.y += 0.5f;
+            
+            transform.position = p;
+            rb.velocity = direction * 0.2f;
+            
+            // v.x = 0f;
+            // v.y = 0f;
+            // rb.velocity = v;
+        }
         // rb.gravityScale = 0;
        
     }
     void OnCollisionEnter2D(Collision2D other) {
 
-        hooked = false;
-        Debug.Log(rb.velocity);
+        if (other.gameObject == targetBoard) {
+            hooked = false;
+        }
       
-        Vector2 v = rb.velocity;
-        v.y = JUMPFORCE;
-        rb.velocity = v;
+        // Vector2 v = rb.velocity;
+        // v.y = JUMPFORCE;
+        // rb.velocity = v;
     
         // Debug.Log(other.collider.gameObject.name);
         // Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
