@@ -52,6 +52,16 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
+         if(rb.position.x > 4.0f){
+             Vector2 position = rb.position;
+             position.x = -4.0f;
+             rb.position = position;
+         }
+         if(rb.position.x < -4.0f){
+             Vector2 position = rb.position;
+             position.x = 4.0f;
+             rb.position = position;
+         }
     
         if (hooked) {
  
