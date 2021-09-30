@@ -33,7 +33,10 @@ public class Player : MonoBehaviour
     void Update()
     {
       
-       
+        movement = Input.GetAxis("Horizontal") * speed;
+            Vector2 velocity = rb.velocity;
+            velocity.x = movement;
+            rb.velocity = velocity;
        
         if(jump == false){
            
@@ -56,12 +59,9 @@ public class Player : MonoBehaviour
                 
             }
         }else{
-            movement = Input.GetAxis("Horizontal") * speed;
-            Vector2 velocity = rb.velocity;
-            velocity.x = movement;
-            rb.velocity = velocity;
+           
              
-             JUMPFORCE = 10f;
+           //  JUMPFORCE = 10f;
              
         }
     }
