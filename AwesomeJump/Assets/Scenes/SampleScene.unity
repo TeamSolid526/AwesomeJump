@@ -403,7 +403,7 @@ MonoBehaviour:
   Laser: {fileID: 8424293931004889763, guid: c5b18c32b48424bc5a84376cc1d78d10, type: 3}
   cameraPos: {fileID: 519420032}
   timer: 10
-  laserNum: 0
+  laserNum: 1
 --- !u!4 &510736740
 Transform:
   m_ObjectHideFlags: 0
