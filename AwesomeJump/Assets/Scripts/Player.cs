@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+    public Text healthText;
+    public float highestY = 0f;
     public float speed = 2f;
     public float movement = 0f;
     public float ropeLength = 10f;
@@ -59,6 +62,10 @@ public class Player : MonoBehaviour
                 
             }
         }
+        if(transform.position.y > highestY){
+            highestY = transform.position.y;
+        }
+        healthText.text = "Helath: " + health.ToString();
     }
 
     void FixedUpdate() {
@@ -135,7 +142,7 @@ public class Player : MonoBehaviour
               
                 if (boardScript.property.type == "debuff"){
                     countBlue+=1;
- Debug.Log(countBlue);
+                    // Debug.Log(countBlue);
                 }
                 else{
                     countBlue = 0;
@@ -161,6 +168,7 @@ public class Player : MonoBehaviour
     }
      private void changeMovement(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(jump == true){
             jump = !jump;
         }
@@ -168,5 +176,10 @@ public class Player : MonoBehaviour
         
         jump = !jump;
 >>>>>>> 5d177475c95df2b25da6d3cd52108b4cd1d0ce4c
+=======
+        if(jump == true){
+            jump = !jump;
+        }
+>>>>>>> a736e3770a73c60f7830e48106718af6f9b91d48
     }
 }
