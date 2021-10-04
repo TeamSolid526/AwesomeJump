@@ -64,6 +64,7 @@ public class Platform : MonoBehaviour
             if (rb != null) {
                 Vector2 velocity = rb.velocity;
                 velocity.y = JUMPFORCE;
+                Debug.Log(velocity.y);
                 rb.velocity = velocity;
             }
             // Reverse board property if colliding with player
