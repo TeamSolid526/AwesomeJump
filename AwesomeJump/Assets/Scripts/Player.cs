@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+    public Text healthText;
     public float speed = 2f;
     public float movement = 0f;
     public float ropeLength = 10f;
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
                 
             }
         }
+        healthText.text = "Helath: " + health.ToString();
     }
 
     void FixedUpdate() {
