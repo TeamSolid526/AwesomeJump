@@ -64,8 +64,18 @@ public class Platform : MonoBehaviour
             if (rb != null) {
                 Vector2 velocity = rb.velocity;
                 velocity.y = JUMPFORCE;
-                Debug.Log(velocity.y);
                 rb.velocity = velocity;
+                
+            // // Debug.Log(health);
+            if(property.type=="buff"){
+            
+            // Debug.Log(property.value);
+            collision.collider.gameObject.GetComponent<Player>().health += (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100);
+            }
+            else{
+                collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 300);
+            }
+            Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
             }
             // Reverse board property if colliding with player
             ReverseProperty();
