@@ -47,12 +47,12 @@ public class Platform : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (property.type == "buff") {
             property.type = "debuff";
-            property.value = -property.value;
+            // property.value = -property.value;
             spriteRenderer.color = Color.red;
         }
         else {
             property.type = "buff";
-            property.value = -property.value;
+            // property.value = -property.value;
             spriteRenderer.color = Color.blue;
         }
     }
