@@ -58,11 +58,6 @@ public class Player : MonoBehaviour
                 
                 
             }
-        }else{
-           
-             
-           //  JUMPFORCE = 10f;
-             
         }
     }
 
