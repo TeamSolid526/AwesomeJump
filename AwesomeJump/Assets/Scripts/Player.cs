@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Text healthText;
+    public float highestY = 0f;
     public float speed = 2f;
     public float movement = 0f;
     public float ropeLength = 10f;
@@ -60,6 +61,9 @@ public class Player : MonoBehaviour
                 
                 
             }
+        }
+        if(transform.position.y > highestY){
+            highestY = transform.position.y;
         }
         healthText.text = "Helath: " + health.ToString();
     }
@@ -138,7 +142,7 @@ public class Player : MonoBehaviour
               
                 if (boardScript.property.type == "debuff"){
                     countBlue+=1;
- Debug.Log(countBlue);
+                    // Debug.Log(countBlue);
                 }
                 else{
                     countBlue = 0;
