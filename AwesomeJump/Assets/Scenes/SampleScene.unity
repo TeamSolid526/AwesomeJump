@@ -403,11 +403,7 @@ MonoBehaviour:
   Laser: {fileID: 8424293931004889763, guid: c5b18c32b48424bc5a84376cc1d78d10, type: 3}
   cameraPos: {fileID: 519420032}
   timer: 10
-<<<<<<< HEAD
-  laserNum: 0
-=======
   laserNum: 1
->>>>>>> 51c32e825ecde9905e84213e8790a4cc29961831
 --- !u!4 &510736740
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,10 +1198,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 3206298956096362878, guid: 493acf214c19b449791104cadabef5ca, type: 3}
-      propertyPath: JUMPFORCE
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6747032478604492720, guid: 493acf214c19b449791104cadabef5ca, type: 3}
       propertyPath: m_RootOrder
       value: 3
