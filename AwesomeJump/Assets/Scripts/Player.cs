@@ -163,7 +163,8 @@ public class Player : MonoBehaviour
             
     }
      private void changeMovement(){
-        
-        jump = !jump;
+        if(jump == true){
+            jump = !jump;
+        }
     }
 }
