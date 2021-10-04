@@ -11,7 +11,7 @@ public class LaserGenerator : MonoBehaviour
 	//public Transform text;
 	private GameObject time;
 	private Score score;
-	public int laserNum = 0;
+	public int laserNum = 1;
     // Update is called once per frame
 	private void Start()
 	{
