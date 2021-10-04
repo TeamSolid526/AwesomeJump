@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
                 rb.velocity = v;
                 Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
               
-                if (boardScript.property.type == "debuff"){
+                if (boardScript.property.type == "debuff" && hooked == false){
                     countBlue+=1;
                     // Debug.Log(countBlue);
                 }
@@ -167,19 +167,10 @@ public class Player : MonoBehaviour
             
     }
      private void changeMovement(){
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         if(jump == true){
             jump = !jump;
         }
-=======
-        
-        jump = !jump;
->>>>>>> 5d177475c95df2b25da6d3cd52108b4cd1d0ce4c
-=======
-        if(jump == true){
-            jump = !jump;
-        }
->>>>>>> a736e3770a73c60f7830e48106718af6f9b91d48
+
     }
 }
