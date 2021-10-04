@@ -30,7 +30,7 @@ public class LaserGenerator : MonoBehaviour
 		score = time.GetComponent<Score>();
 		timer = score.curTimeRemain;
 		//text = text.timeRemain;
-		//Debug.Log((int)timer+1);
+		// Debug.Log((int)timer+1);
 		//timer -= Time.deltaTime;
 		if((int)timer <= 0 && laserNum == 0){
 			generateLaser();
