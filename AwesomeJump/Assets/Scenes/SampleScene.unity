@@ -263,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: -68}
+  m_AnchoredPosition: {x: 243, y: -30.833}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433752549
@@ -404,7 +404,7 @@ MonoBehaviour:
   Laser: {fileID: 8424293931004889763, guid: c5b18c32b48424bc5a84376cc1d78d10, type: 3}
   cameraPos: {fileID: 519420032}
   timer: 10
-  laserNum: 0
+  laserNum: 1
 --- !u!4 &510736740
 Transform:
   m_ObjectHideFlags: 0
@@ -552,8 +552,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175.44373, y: -129.75394}
-  m_SizeDelta: {x: 190.8875, y: 49.5079}
+  m_AnchoredPosition: {x: 170, y: -129.75}
+  m_SizeDelta: {x: 361.2886, y: 161.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525580630
 MonoBehaviour:
@@ -577,11 +577,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: eaa5679ecc0f44f179947c00c0fbff8b, type: 3}
-    m_FontSize: 36
+    m_FontSize: 66
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 66
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -973,8 +973,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -120, y: -120}
-  m_SizeDelta: {x: 160, y: 105.8945}
+  m_AnchoredPosition: {x: -145.55, y: -129.75}
+  m_SizeDelta: {x: 291.1067, y: 167.8347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255539817
 MonoBehaviour:
@@ -991,7 +991,7 @@ MonoBehaviour:
   character: {fileID: 1269469353}
   scoreText: {fileID: 1255539818}
   hookNum: 0
-  timeRemain: 60
+  timeRemain: 30
   curTimeRemain: 0
 --- !u!114 &1255539818
 MonoBehaviour:
@@ -1020,7 +1020,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 66
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 1

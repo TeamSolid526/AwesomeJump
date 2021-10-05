@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(character.position.y < cameraPos.position.y - 6f){
+        if(character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0){
             scoreText.text = "Game Over.";
         }
     }

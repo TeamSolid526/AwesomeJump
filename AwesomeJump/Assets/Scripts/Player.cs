@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
                 rb.velocity = v;
                 Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
               
-                if (boardScript.property.type == "debuff"){
+                if (boardScript.property.type == "debuff" && hooked == false){
                     countBlue+=1;
                     // Debug.Log(countBlue);
                 }
