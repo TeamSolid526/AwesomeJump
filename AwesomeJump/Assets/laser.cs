@@ -21,8 +21,8 @@ public class laser : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Character") {
-            character.health /= 2;
-            Debug.Log("headlll!!!!!!" + character.health);
+            col.gameObject.GetComponent<Player>().health /= 2;
+            Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
         }
     }
 }
