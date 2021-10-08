@@ -22,7 +22,7 @@ public class laser : MonoBehaviour
     {
         if (col.gameObject.name == "Character") {
             col.gameObject.GetComponent<Player>().health /= 2;
-            Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
+            // Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
         }
     }
 }

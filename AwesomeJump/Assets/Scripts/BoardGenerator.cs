@@ -18,7 +18,8 @@ public class BoardGenerator : MonoBehaviour
     private readonly System.Random _random = new System.Random();
 
     // Attenuation rate of the possibility to generate double board
-    public float doubleBoardWeight = 1.0f;
+    public float doubleBoardWeight_P = 1.0f;
+    public float doubleBoardWeight_G = 1.0f;
     // The min distance between double boards in the same height
     public float doubleBoardGap = 0.5f;
     // Record the last coordinateY generating double boards
@@ -27,7 +28,7 @@ public class BoardGenerator : MonoBehaviour
 
     // Calculate the possibility to generate two board with the same height
     private float Probability(int height) {
-        return (float)(Exp(-doubleBoardWeight*height)*100);
+        return (float)(Exp(-doubleBoardWeight_P*height)*100);
     }
     
     // Start is called before the first frame update
@@ -39,7 +40,7 @@ public class BoardGenerator : MonoBehaviour
             spawnPosition.y += Random.Range(minY, maxY);
             float flag = _random.Next(100);
             // Generate single board
-            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight*spawnPosition.y) {
+            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight_G*spawnPosition.y) {
                 spawnPosition.x = Random.Range(-rangeX, rangeX);
                 Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
             }
@@ -64,7 +65,11 @@ public class BoardGenerator : MonoBehaviour
             spawnPosition.y += (generatedY + Random.Range(minY, maxY));
             float flag = _random.Next(100);
             // Generate single board
-            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight*spawnPosition.y) {
+            Debug.Log(flag);
+            Debug.Log(Probability((int)spawnPosition.y));
+            Debug.Log(spawnPosition.y-prevDoubleY);
+            Debug.Log(doubleBoardWeight_G*spawnPosition.y);
+            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight_G*spawnPosition.y) {
                 spawnPosition.x = Random.Range(-rangeX, rangeX);
                 Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
             }
