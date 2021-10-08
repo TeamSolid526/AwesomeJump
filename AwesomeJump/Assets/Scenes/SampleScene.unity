@@ -1098,10 +1098,11 @@ MonoBehaviour:
   cameraPos: {fileID: 519420032}
   numberOfPlatforms: 3
   spawnRange: 10
-  rangeX: 3
+  rangeX: 3.5
   minY: 1.5
   maxY: 2
-  doubleBoardWeight: 0.001
+  doubleBoardWeight_P: 0.01
+  doubleBoardWeight_G: 1
   doubleBoardGap: 0.5
 --- !u!4 &1507610541
 Transform:
