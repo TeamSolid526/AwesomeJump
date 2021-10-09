@@ -12,11 +12,12 @@ public class Score : MonoBehaviour
     
     public Transform character;
     public Text scoreText;
+    //public Text scoreOnly;
     public int hookNum = 0;
     public float timeRemain = 60;
     // Start is called before the first frame update
 
-    private int max = 0;
+    public int max = 0;
     public float curTimeRemain;
 
     void Start() {
@@ -32,6 +33,8 @@ public class Score : MonoBehaviour
         if(curTimeRemain < 0){
             curTimeRemain = timeRemain;
         }
+
+        //scoreOnly.text = "Score: " + max.ToString("0") + "\n";
         scoreText.text = "Score: " + max.ToString("0") + "\n" +
          "Hooks: " + hookNum.ToString() + "\n" +
          "Laser in " + curTimeRemain.ToString("0") + "s";
