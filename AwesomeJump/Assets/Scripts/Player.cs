@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         if(transform.position.y > highestY){
             highestY = transform.position.y;
         }
-        healthText.text = "Helath: " + health.ToString();
+        healthText.text = "Health: " + health.ToString();
     }
 
     void FixedUpdate() {
