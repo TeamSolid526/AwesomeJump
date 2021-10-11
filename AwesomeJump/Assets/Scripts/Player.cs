@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         
             if (hooked) {
     
-                rb.velocity = direction * 2f;
+                rb.velocity = direction * 5f;
                 lr.SetPosition(1, targetBoard.transform.position);            
             }
             else {
