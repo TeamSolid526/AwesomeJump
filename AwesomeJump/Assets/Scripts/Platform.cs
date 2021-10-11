@@ -30,6 +30,12 @@ public class Platform : MonoBehaviour
     public float fragileWeight = 20f;
     public PlatformProperty property;
 
+    public bool single;
+
+    bool move;
+    float displacement = 0;
+    float moveDir = 1f;
+
     private List<string> platformTypes = new List<string>() { "buff", "debuff" };
     private static readonly System.Random getrandom = new System.Random();
 
@@ -38,6 +44,7 @@ public class Platform : MonoBehaviour
         string type = platformTypes[getrandom.Next(0, platformTypes.Count)];
         int value = getrandom.Next(2,10);
         int fragileValue = getrandom.Next(0,100);
+        move = getrandom.Next(0, 100) > 50;
         property = new PlatformProperty(type, (float)value, fragileValue<fragileWeight);
 
         // Change color if the board is debuff
@@ -104,6 +111,27 @@ public class Platform : MonoBehaviour
         Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
         if (this.transform.position.y < stageDimensions.y) {
             Destroy(this.gameObject);
+        }
+
+    }
+
+    void FixedUpdate() 
+    {
+        if (move && single)
+        {
+            Vector3 pos = transform.position;
+            if (displacement <= 3f)
+            {
+                pos.x += 0.05f * moveDir;
+                displacement += 0.05f;
+            } 
+            else
+            {
+                displacement = 0;
+                moveDir *= -1f;
+            }
+            transform.position = pos;
+
         }
     }
 }
