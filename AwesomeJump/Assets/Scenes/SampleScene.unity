@@ -1783,6 +1783,8 @@ MonoBehaviour:
   ropeLength: 10
   health: 100
   laser: {fileID: 583770610}
+  hooked: 0
+  jump: 1
   JUMPFORCE: 10
 --- !u!1 &1507610539
 GameObject:

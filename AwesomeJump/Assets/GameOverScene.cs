@@ -13,7 +13,5 @@ public class GameOverScene : MonoBehaviour
         player.enabled = false;
         gameObject.SetActive(true);
         scoreText.text = "Your Score:" + score.max.ToString();
-
     }
-
 }
