@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JUMPFORCE: 0.1
+  fragileWeight: 20
 --- !u!61 &-68109096734143766
 BoxCollider2D:
   m_ObjectHideFlags: 0

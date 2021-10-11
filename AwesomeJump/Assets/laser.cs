@@ -22,6 +22,16 @@ public class laser : MonoBehaviour
     {
         if (col.gameObject.name == "Character") {
             col.gameObject.GetComponent<Player>().health /= 2;
+            SpriteRenderer spriteRenderer = col.gameObject.GetComponent<SpriteRenderer>();
+            if (col.gameObject.GetComponent<Player>().colortype == 1){
+                col.gameObject.GetComponent<Player>().colortype = -1;
+                spriteRenderer.color = Color.red;
+            }
+            else{
+                col.gameObject.GetComponent<Player>().colortype = 1;
+                spriteRenderer.color = Color.blue;
+            }
+
             // Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
         }
     }
