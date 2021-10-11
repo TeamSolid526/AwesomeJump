@@ -72,7 +72,7 @@ public class BoardGenerator : MonoBehaviour
             Debug.Log(Probability((int)spawnPosition.y));
             Debug.Log(spawnPosition.y-prevDoubleY);
             Debug.Log(doubleBoardWeight_G*spawnPosition.y);
-            if (flag >= 0){//Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight_G*spawnPosition.y) {
+            if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight_G*spawnPosition.y) {
                 spawnPosition.x = Random.Range(-rangeX, rangeX);
                 GameObject board = Instantiate(boardPrefab, spawnPosition, Quaternion.identity);
                 Platform p = board.GetComponent<Platform>();
