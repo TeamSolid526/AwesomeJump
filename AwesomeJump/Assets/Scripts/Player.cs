@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     LineRenderer lr;
     GameObject targetBoard;
     Vector3 lineStartPoint;
-    bool hooked = false;
-    bool jump = true;
+    public bool hooked = false;
+    public bool jump = true;
     private int countBlue = 0;
 
     public float JUMPFORCE = 10f;
