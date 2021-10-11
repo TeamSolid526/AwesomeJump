@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float movement = 0f;
     public float ropeLength = 10f;
     public int health = 100;
+    public int colortype = 1;
     public GameObject laser;
     Rigidbody2D rb;
     Vector3 worldMousePosition;
@@ -19,8 +20,8 @@ public class Player : MonoBehaviour
     LineRenderer lr;
     GameObject targetBoard;
     Vector3 lineStartPoint;
-    bool hooked = false;
-    bool jump = true;
+    public bool hooked = false;
+    public bool jump = true;
     private int countBlue = 0;
 
     public float JUMPFORCE = 10f;
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
         if(transform.position.y > highestY){
             highestY = transform.position.y;
         }
-        healthText.text = "Helath: " + health.ToString();
+        healthText.text = "Health: " + health.ToString();
     }
 
     void FixedUpdate() {

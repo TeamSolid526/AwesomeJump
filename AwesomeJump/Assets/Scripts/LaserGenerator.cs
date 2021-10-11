@@ -7,7 +7,7 @@ public class LaserGenerator : MonoBehaviour
 {
     public GameObject Laser;
 	public Transform cameraPos;
-	public float timer = 10.0f;
+	public float timer = 30.0f;
 	//public Transform text;
 	private GameObject time;
 	private Score score;
@@ -16,6 +16,7 @@ public class LaserGenerator : MonoBehaviour
 	private void Start()
 	{
 		//InvokeRepeating("generateLaser", 10.0f, 10.0f);
+		timer = 30.0f;
 	}
 
 	private void generateLaser()
@@ -26,14 +27,16 @@ public class LaserGenerator : MonoBehaviour
 	}
 	
 	void Update(){
-		time = GameObject.Find("Text");
-		score = time.GetComponent<Score>();
-		timer = score.curTimeRemain;
+		//time = GameObject.Find("Text");
+		//score = time.GetComponent<Score>();
+		//timer = score.curTimeRemain;
 		//text = text.timeRemain;
 		// Debug.Log((int)timer+1);
 		//timer -= Time.deltaTime;
+		timer -= Time.deltaTime;
 		if((int)timer <= 0 && laserNum == 0){
 			generateLaser();
+			timer = 30;
 		}
 	}
 }

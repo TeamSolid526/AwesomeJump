@@ -7,15 +7,18 @@ public class PlatformProperty
 {
     public string type;
     public float value;
+    public bool fragile;
 
     public PlatformProperty() {
         type = "buff";
         value = 0f;
+        fragile = false;
     }
 
-    public PlatformProperty(string tp, float val) {
+    public PlatformProperty(string tp, float val, bool fgl=false) {
         type = tp;
         value = val;
+        fragile = fgl;
     }
 
 }
@@ -24,7 +27,14 @@ public class PlatformProperty
 public class Platform : MonoBehaviour
 {
     public float JUMPFORCE = 10f;
+    public float fragileWeight = 20f;
     public PlatformProperty property;
+
+    public bool single;
+
+    bool move;
+    float displacement = 0;
+    float moveDir = 1f;
 
     private List<string> platformTypes = new List<string>() { "buff", "debuff" };
     private static readonly System.Random getrandom = new System.Random();
@@ -33,12 +43,20 @@ public class Platform : MonoBehaviour
         // Init the board properties
         string type = platformTypes[getrandom.Next(0, platformTypes.Count)];
         int value = getrandom.Next(2,10);
-        property = new PlatformProperty(type, (float)value);
+        int fragileValue = getrandom.Next(0,100);
+        move = getrandom.Next(0, 100) > 50;
+        property = new PlatformProperty(type, (float)value, fragileValue<fragileWeight);
 
         // Change color if the board is debuff
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (type=="debuff") {
             spriteRenderer.color = Color.red;
+        }
+        // Change color if the board is fragile
+        if (fragileValue<fragileWeight) {
+            Vector4 newColor = spriteRenderer.color;
+            newColor[3] = 0.3f;
+            spriteRenderer.color = newColor;
         }
     }
 
@@ -47,12 +65,10 @@ public class Platform : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (property.type == "buff") {
             property.type = "debuff";
-            // property.value = -property.value;
             spriteRenderer.color = Color.red;
         }
         else {
             property.type = "buff";
-            // property.value = -property.value;
             spriteRenderer.color = Color.blue;
         }
     }
@@ -66,19 +82,25 @@ public class Platform : MonoBehaviour
                 velocity.y = JUMPFORCE;
                 rb.velocity = velocity;
                 
-            // // Debug.Log(health);
-            if(property.type=="buff"){
-            
-            // Debug.Log(property.value);
-            collision.collider.gameObject.GetComponent<Player>().health += (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100);
+                // // Debug.Log(health);
+                if(property.type=="buff"){
+                    // Debug.Log(property.value);
+                    collision.collider.gameObject.GetComponent<Player>().health += (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 300) * collision.collider.gameObject.GetComponent<Player>().colortype;
+                }
+                else{
+                    collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100) * collision.collider.gameObject.GetComponent<Player>().colortype;
+                }
+                Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
             }
-            else{
-                collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 300);
-            }
-            Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
+            // Destroy board if board is fragile
+            if (property.fragile){
+                Destroy(this.gameObject);
+                return;
             }
             // Reverse board property if colliding with player
-            ReverseProperty();
+            if (property.type=="buff"){
+                ReverseProperty();
+            }
         }
     }
 
@@ -89,6 +111,27 @@ public class Platform : MonoBehaviour
         Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
         if (this.transform.position.y < stageDimensions.y) {
             Destroy(this.gameObject);
+        }
+
+    }
+
+    void FixedUpdate() 
+    {
+        if (move && single)
+        {
+            Vector3 pos = transform.position;
+            if (displacement <= 3f)
+            {
+                pos.x += 0.05f * moveDir;
+                displacement += 0.05f;
+            } 
+            else
+            {
+                displacement = 0;
+                moveDir *= -1f;
+            }
+            transform.position = pos;
+
         }
     }
 }

@@ -21,8 +21,18 @@ public class laser : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Character") {
-            character.health /= 2;
-            Debug.Log("headlll!!!!!!" + character.health);
+            col.gameObject.GetComponent<Player>().health /= 2;
+            SpriteRenderer spriteRenderer = col.gameObject.GetComponent<SpriteRenderer>();
+            if (col.gameObject.GetComponent<Player>().colortype == 1){
+                col.gameObject.GetComponent<Player>().colortype = -1;
+                spriteRenderer.color = Color.red;
+            }
+            else{
+                col.gameObject.GetComponent<Player>().colortype = 1;
+                spriteRenderer.color = Color.blue;
+            }
+
+            // Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
         }
     }
 }
