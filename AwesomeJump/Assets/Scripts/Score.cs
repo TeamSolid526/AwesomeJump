@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     public Text scoreText;
     //public Text scoreOnly;
     public int hookNum = 0;
-    public float timeRemain = 60;
+    public float timeRemain = 30;
     // Start is called before the first frame update
 
     public int max = 0;
@@ -29,10 +29,11 @@ public class Score : MonoBehaviour
         if(character.position.y > max){
             max = (int)character.position.y;
         }
-        curTimeRemain -= Time.deltaTime;
-        if(curTimeRemain < 0){
-            curTimeRemain = timeRemain;
-        }
+        //curTimeRemain -= Time.deltaTime;
+		curTimeRemain = GameObject.Find("LaserGenerator").GetComponent<LaserGenerator>().timer;
+        //if(curTimeRemain < 0){
+        //    curTimeRemain = timeRemain;
+        //}
 
         //scoreOnly.text = "Score: " + max.ToString("0") + "\n";
         scoreText.text = "Score: " + max.ToString("0") + "\n" +
