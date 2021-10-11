@@ -85,10 +85,10 @@ public class Platform : MonoBehaviour
                 // // Debug.Log(health);
                 if(property.type=="buff"){
                     // Debug.Log(property.value);
-                    collision.collider.gameObject.GetComponent<Player>().health += (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 300);
+                    collision.collider.gameObject.GetComponent<Player>().health += (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 300) * collision.collider.gameObject.GetComponent<Player>().colortype;
                 }
                 else{
-                    collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100);
+                    collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100) * collision.collider.gameObject.GetComponent<Player>().colortype;
                 }
                 Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
             }
