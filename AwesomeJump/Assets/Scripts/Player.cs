@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private int countBlue = 0;
 
     public float JUMPFORCE = 10f;
+    public int maxHealth = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +68,9 @@ public class Player : MonoBehaviour
             highestY = transform.position.y;
         }
         healthText.text = "Health: " + health.ToString();
+        if(health > maxHealth){
+            maxHealth = health;
+        }
     }
 
     void FixedUpdate() {
