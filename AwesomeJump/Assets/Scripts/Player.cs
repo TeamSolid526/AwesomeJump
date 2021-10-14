@@ -79,14 +79,14 @@ public class Player : MonoBehaviour
             lineStartPoint = rb.position;
 
                 lr.SetPosition(0, lineStartPoint);
-            if(rb.position.x > 4.0f){
+            if(rb.position.x > 7.5f){
                 Vector2 position = rb.position;
-                position.x = -4.0f;
+                position.x = -7.5f;
                 rb.position = position;
             }
-            if(rb.position.x < -4.0f){
+            if(rb.position.x < -7.5f){
                 Vector2 position = rb.position;
-                position.x = 4.0f;
+                position.x = 7.5f;
                 rb.position = position;
             }
         

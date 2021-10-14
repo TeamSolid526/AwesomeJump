@@ -10,7 +10,7 @@ public class BoardGenerator : MonoBehaviour
 
     public int numberOfPlatforms = 5;
     public float spawnRange = 10f;
-    public float rangeX = 3f;
+    public float rangeX = 7f;
     public float minY = 0.2f;
     public float maxY = 1.5f;
 
