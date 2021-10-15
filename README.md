@@ -2,6 +2,8 @@
 
 An endless jumping game created by [TeamSolid](https://github.com/TeamSolid526)
 
+[DEMO](https://teamsolid526.github.io/AwesomeJump/)
+
 ### Documents
 - [GDD](https://docs.google.com/document/d/1XpwUizX4sju-hacB2D4vGi2fWnMIgXCk3vYPiAw_oW8)
 
