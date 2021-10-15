@@ -288,7 +288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xF72"
+  m_Text: +100
 --- !u!222 &222500607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -313,12 +313,8 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8697397195184015080, guid: 5feaf9879dc85df4cb63a6383cd8f14b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697397195184015080, guid: 5feaf9879dc85df4cb63a6383cd8f14b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 8697397195184015080, guid: 5feaf9879dc85df4cb63a6383cd8f14b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -666,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.15686274, b: 0.9348487, a: 1}
+  m_Color: {r: 1, g: 0.19607843, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -686,7 +682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '%100'
+  m_Text: "\xF72"
 --- !u!222 &265751881
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1580,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607842, g: 1, b: 0.23181334, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1600,7 +1596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -100
+  m_Text: x2
 --- !u!222 &1136927070
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1832,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.19607842, b: 0.9864152, a: 1}
+  m_Color: {r: 1, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2060,7 +2056,6 @@ MonoBehaviour:
   health: 100
   colortype: 1
   laser: {fileID: 0}
-  laserBuff: 0
   hooked: 0
   jump: 1
   JUMPFORCE: 10
@@ -2134,12 +2129,8 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7897380314593375775, guid: 463a4d77ac1fed1448eab001c7fa75b9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897380314593375775, guid: 463a4d77ac1fed1448eab001c7fa75b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 7897380314593375775, guid: 463a4d77ac1fed1448eab001c7fa75b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2383,7 +2374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23523274, g: 1, b: 0.19607842, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2474,24 +2465,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1834517479 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8712192245778228564, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
-  m_PrefabInstance: {fileID: 2063311566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1834517480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834517479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e88159fa61e7b499ddfdbd4682dd7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 0}
 --- !u!1 &2007396007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,21 +2554,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5003806080483479039, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6303219572705024075, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6303219572705024075, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6303219572705024075, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6303219572705024075, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2637,8 +2602,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserMid
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5003806080483479039, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
 --- !u!1001 &6747032479364679463
 PrefabInstance:

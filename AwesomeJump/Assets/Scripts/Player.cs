@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
     public int health = 100;
     public int colortype = 1;
     public GameObject laser;
-	
-	public bool laserBuff;
-	
     Rigidbody2D rb;
     Vector3 worldMousePosition;
     Vector2 direction;
@@ -34,19 +31,13 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
-        //Debug.Log(jump);
-		
-		//test laser buff
-		laserBuff = true;
-		
+        Debug.Log(jump);
     }
 
     // Update is called once per frame
     void Update()
     {
-		//test laser buff
-		laserBuff = false;
-	  
+      
         movement = Input.GetAxis("Horizontal") * speed;
             Vector2 velocity = rb.velocity;
             velocity.x = movement;
