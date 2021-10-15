@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     Vector3 lineStartPoint;
     public bool hooked = false;
     public bool jump = true;
-    private int countBlue = 0;
+    private int countSameColor = 0;
 
     public float JUMPFORCE = 10f;
     public int maxHealth = 0;
@@ -143,20 +143,18 @@ public class Player : MonoBehaviour
                 Vector2 v = rb.velocity;
                 v.y = JUMPFORCE;
                 rb.velocity = v;
-                Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
-              
-                if (boardScript.property.type == "debuff" && hooked == false){
-                    countBlue+=1;
-                    // Debug.Log(countBlue);
+                //Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
+                Platform board = other.gameObject.GetComponent<Platform>();                
+                SpriteRenderer sr = GetComponent<SpriteRenderer>();
+                Vector3 playerColor = new Vector3(sr.color[0], sr.color[1], sr.color[2]);
+                if (board.color == playerColor) {
+                    countSameColor++;
+                } else {
+                    countSameColor = 0;
                 }
-                else{
-                    countBlue = 0;
-                
-                }
-                if(countBlue == 3){
-                   
-                    countBlue = 0;
-                    changeMovement();
+                if (countSameColor == 3) {
+                    jump = false;
+                    countSameColor = 0;
                 }
         }
         // Debug.Log(other.collider.gameObject.name);
