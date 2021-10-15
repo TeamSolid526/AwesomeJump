@@ -139,25 +139,34 @@ public class Player : MonoBehaviour
             hooked = false;
             jump = true;
         }
+
         if(other.relativeVelocity.y > 0){
+            Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
+            if (boardScript != null) { 
                 Vector2 v = rb.velocity;
-                v.y = JUMPFORCE;
-                rb.velocity = v;
-                Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
-              
-                if (boardScript.property.type == "debuff" && hooked == false){
-                    countBlue+=1;
+            v.y = JUMPFORCE;
+            rb.velocity = v;
+
+
+            //if (boardScript != null)
+            //{
+                if (boardScript.property.type == "debuff" && hooked == false)
+                {
+                    countBlue += 1;
                     // Debug.Log(countBlue);
                 }
-                else{
+                else
+                {
                     countBlue = 0;
-                
+
                 }
-                if(countBlue == 3){
-                   
+                if (countBlue == 3)
+                {
+
                     countBlue = 0;
                     changeMovement();
                 }
+            }
         }
         // Debug.Log(other.collider.gameObject.name);
         // Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
@@ -165,8 +174,7 @@ public class Player : MonoBehaviour
         
         if (other.collider.gameObject.name == "Board(Clone)" && other.relativeVelocity.y > 0)
         {
-            health ++;
-   //         Debug.Log(health);
+
         }
       
             
