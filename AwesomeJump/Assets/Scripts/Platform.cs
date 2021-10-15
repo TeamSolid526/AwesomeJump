@@ -98,7 +98,7 @@ public class Platform : MonoBehaviour
                 return;
             }
             // Reverse board property if colliding with player
-            if (property.type=="buff"){
+            if (collision.collider.gameObject.GetComponent<Player>().colortype == 1 && property.type=="buff" || collision.collider.gameObject.GetComponent<Player>().colortype == -1 && property.type=="debuff"){
                 ReverseProperty();
             }
         }
