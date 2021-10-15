@@ -10,7 +10,7 @@ public class BoardGenerator : MonoBehaviour
 
     public int numberOfPlatforms = 5;
     public float spawnRange = 10f;
-    public float rangeX = 3f;
+    public float rangeX = 7f;
     public float minY = 0.2f;
     public float maxY = 1.5f;
 
@@ -68,10 +68,10 @@ public class BoardGenerator : MonoBehaviour
             spawnPosition.y += (generatedY + Random.Range(minY, maxY));
             float flag = _random.Next(100);
             // Generate single board
-            Debug.Log(flag);
-            Debug.Log(Probability((int)spawnPosition.y));
-            Debug.Log(spawnPosition.y-prevDoubleY);
-            Debug.Log(doubleBoardWeight_G*spawnPosition.y);
+            //Debug.Log(flag);
+            //Debug.Log(Probability((int)spawnPosition.y));
+            //Debug.Log(spawnPosition.y-prevDoubleY);
+            //Debug.Log(doubleBoardWeight_G*spawnPosition.y);
             if (flag >= Probability((int)spawnPosition.y) && spawnPosition.y-prevDoubleY<=doubleBoardWeight_G*spawnPosition.y) {
                 spawnPosition.x = Random.Range(-rangeX, rangeX);
                 GameObject board = Instantiate(boardPrefab, spawnPosition, Quaternion.identity);

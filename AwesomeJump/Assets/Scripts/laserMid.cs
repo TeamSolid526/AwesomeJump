@@ -6,9 +6,10 @@ public class laserMid : MonoBehaviour
 {
     // Start is called before the first frame update
 	public Player character;
+	private int flag;
     void Start()
     {
-        
+        flag = 0;
     }
 
     // Update is called once per frame
@@ -18,9 +19,12 @@ public class laserMid : MonoBehaviour
     }
 	void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Character") {
-            col.gameObject.GetComponent<Player>().health /= 2;
-            // Debug.Log("headlll!!!!!!" + col.gameObject.GetComponent<Player>().health);
+        if (col.gameObject.name == "Character" && flag == 0) {
+			if(col.gameObject.GetComponent<Player>().laserBuff == false){
+				col.gameObject.GetComponent<Player>().health /= 2;
+				Debug.Log("MID!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
+				flag = 1;
+			}
         }
     }
 }
