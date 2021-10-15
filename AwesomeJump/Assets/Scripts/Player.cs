@@ -124,13 +124,13 @@ public class Player : MonoBehaviour
                 
                 transform.position = p;
                 rb.velocity = direction * 0.2f;
-            
-                // v.x = 0f;
-                // v.y = 0f;
-                // rb.velocity = v;
             }
         }
-        // rb.gravityScale = 0;
+        
+        if (other.gameObject.GetComponent<Bonus>()) {
+            Destroy(other.gameObject);
+            //TODO: Active bonus behavior
+        }
        
     }
     void OnCollisionEnter2D(Collision2D other) {
