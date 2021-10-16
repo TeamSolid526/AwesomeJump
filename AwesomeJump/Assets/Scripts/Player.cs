@@ -139,6 +139,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject == targetBoard) {
             hooked = false;
+            PlayerData.hooks++;
             jump = true;
         }
         if(other.relativeVelocity.y > 0){

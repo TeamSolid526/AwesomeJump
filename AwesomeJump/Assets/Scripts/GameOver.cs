@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Analytics;
 public class GameOver : MonoBehaviour
 {
     public Text scoreText;
@@ -25,13 +24,18 @@ public class GameOver : MonoBehaviour
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
             Debug.Log(score);
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
-            
+            PlayerData.score = score;
+            PlayerData.height_score = Math.Max(PlayerData.height_score, score);
             if(character.position.y < cameraPos.position.y - 6f){
-                 Analytics.CustomEvent("gameOver",new Dictionary<string,object>{{"highest score",score},{"highest health",maxHealth},{"Failways","fall out"}});
+                 PlayerData.failWay = "fall out";
             }
             else if(character.gameObject.GetComponent<Player>().health <= 0){
-                Analytics.CustomEvent("gameOver",new Dictionary<string,object>{{"highest score",score},{"highest health",maxHealth},{"Failways","negative points"}});
+                PlayerData.failWay = "negative points";
             }
+            // TODO: uncomment this function to upload data to dashboard
+            PlayerData.UploadData();
+            PlayerData.debug();
+            PlayerData.clear();
             GameOverScene.Setup();
             flag = false;
         }
