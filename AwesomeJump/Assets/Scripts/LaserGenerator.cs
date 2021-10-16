@@ -22,7 +22,7 @@ public class LaserGenerator : MonoBehaviour
 	{
 		//InvokeRepeating("generateLaser", 10.0f, 10.0f);
 		timer = 30.0f;
-		order = new float[]{-2.6f,0f,2.6f};
+		order = new float[]{-5f,0f,5f};
 	}
 
 	private void generateLaser()
@@ -50,7 +50,7 @@ public class LaserGenerator : MonoBehaviour
 		timer -= Time.deltaTime;
 		if((int)timer <= 0 && laserNum <= 0){
 			generateLaser();
-			timer = 30;
+			timer = 30f;
 		}
 	}
 }
