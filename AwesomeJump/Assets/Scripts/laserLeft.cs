@@ -23,6 +23,7 @@ public class laserLeft : MonoBehaviour
         if (col.gameObject.name == "Character" && flag == 0) {
 			if(col.gameObject.GetComponent<Player>().laserBuff == false){
 				col.gameObject.GetComponent<Player>().health -= 100;
+                PlayerData.total_laser_damage += 100;
 				Debug.Log("Left!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
 				flag = 1;
 			}

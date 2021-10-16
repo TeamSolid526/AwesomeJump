@@ -68,10 +68,12 @@ public class Platform : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (property.type == "buff") {
             property.type = "debuff";
+            PlayerData.debuff++;
             spriteRenderer.color = Color.red;
         }
         else {
             property.type = "buff";
+            PlayerData.buff++;
             spriteRenderer.color = Color.blue;
         }
     }

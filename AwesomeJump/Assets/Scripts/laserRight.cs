@@ -21,6 +21,7 @@ public class laserRight : MonoBehaviour
     {
         if (col.gameObject.name == "Character"&& flag == 0) {
 			if(col.gameObject.GetComponent<Player>().laserBuff == false){
+                PlayerData.total_laser_damage += col.gameObject.GetComponent<Player>().health - col.gameObject.GetComponent<Player>().health % 100;
 				col.gameObject.GetComponent<Player>().health = col.gameObject.GetComponent<Player>().health % 100;
 				Debug.Log("Right!!!!!!" + col.gameObject.GetComponent<Player>().health);
 				flag = 1;

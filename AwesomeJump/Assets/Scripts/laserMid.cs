@@ -22,6 +22,7 @@ public class laserMid : MonoBehaviour
         if (col.gameObject.name == "Character" && flag == 0) {
 			if(col.gameObject.GetComponent<Player>().laserBuff == false){
 				col.gameObject.GetComponent<Player>().health /= 2;
+                PlayerData.total_laser_damage += col.gameObject.GetComponent<Player>().health;
 				Debug.Log("MID!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
 				flag = 1;
 			}
