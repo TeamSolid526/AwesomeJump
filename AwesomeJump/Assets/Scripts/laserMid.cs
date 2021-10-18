@@ -20,11 +20,14 @@ public class laserMid : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Character" && flag == 0) {
-			if(col.gameObject.GetComponent<Player>().laserBuff == false){
+			if(col.gameObject.GetComponent<Player>().laserBuff <= 0){
 				col.gameObject.GetComponent<Player>().health /= 2;
                 PlayerData.total_laser_damage += col.gameObject.GetComponent<Player>().health;
 				Debug.Log("MID!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
 				flag = 1;
+			}
+			else{
+				col.gameObject.GetComponent<Player>().laserBuff -= 1;
 			}
         }
     }

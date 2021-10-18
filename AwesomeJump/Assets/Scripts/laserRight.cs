@@ -20,11 +20,14 @@ public class laserRight : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Character"&& flag == 0) {
-			if(col.gameObject.GetComponent<Player>().laserBuff == false){
+			if(col.gameObject.GetComponent<Player>().laserBuff <= 0){
                 PlayerData.total_laser_damage += col.gameObject.GetComponent<Player>().health - col.gameObject.GetComponent<Player>().health % 100;
 				col.gameObject.GetComponent<Player>().health = col.gameObject.GetComponent<Player>().health % 100;
 				Debug.Log("Right!!!!!!" + col.gameObject.GetComponent<Player>().health);
 				flag = 1;
+			}
+			else{
+				col.gameObject.GetComponent<Player>().laserBuff -= 1;
 			}
         }
     }
