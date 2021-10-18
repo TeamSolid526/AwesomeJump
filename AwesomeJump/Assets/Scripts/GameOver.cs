@@ -34,8 +34,8 @@ public class GameOver : MonoBehaviour
                 PlayerData.failWay = "negative points";
             }
             // TODO: uncomment this function to upload data to dashboard
-            PlayerData.UploadData();
             PlayerData.debug();
+            PlayerData.UploadData();
             PlayerData.clear();
             GameOverScene.Setup();
             flag = false;
