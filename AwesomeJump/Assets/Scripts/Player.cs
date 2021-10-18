@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public int colortype = 1;
     public GameObject laser;
 	public bool laserBuff;
+    public bool fallenProtect;
     Rigidbody2D rb;
     Vector3 worldMousePosition;
     Vector2 direction;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         Debug.Log(jump);
 		laserBuff = false;
+        fallenProtect = true;
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class Player : MonoBehaviour
             Vector2 velocity = rb.velocity;
             velocity.x = movement;
             rb.velocity = velocity;
-       
+        
         if(jump == false){
            
             Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
