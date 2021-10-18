@@ -16,6 +16,7 @@ public static class PlayerData
     public static int height_score = 0;
     public static int buff = 0;
     public static int debuff = 0;
+    public static float health = 0;
 
     public static void debug()
     {
@@ -31,6 +32,7 @@ public static class PlayerData
             {"total_laser_damage", total_laser_damage},
             {"failWay", failWay},
             {"score", score},
+            {"health", health},
             {"height_score", height_score},
             {"buff", buff},
             {"defuff", debuff}
@@ -50,5 +52,6 @@ public static class PlayerData
         score = 0;
         buff = 0;
         debuff = 0;
+        health = 0;
     }
 }
