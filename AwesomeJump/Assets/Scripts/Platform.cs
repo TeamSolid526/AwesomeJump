@@ -31,6 +31,7 @@ public class Platform : MonoBehaviour
     public PlatformProperty property;
 
     public bool single;
+    public Vector3 color;
 
     bool move;
     float displacement = 0;
@@ -52,6 +53,8 @@ public class Platform : MonoBehaviour
         if (type=="debuff") {
             spriteRenderer.color = Color.red;
         }
+
+
         // Change color if the board is fragile
         if (fragileValue<fragileWeight) {
             Vector4 newColor = spriteRenderer.color;
@@ -65,10 +68,12 @@ public class Platform : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (property.type == "buff") {
             property.type = "debuff";
+            PlayerData.debuff++;
             spriteRenderer.color = Color.red;
         }
         else {
             property.type = "buff";
+            PlayerData.buff++;
             spriteRenderer.color = Color.blue;
         }
     }
@@ -107,6 +112,8 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();        
+        color = new Vector3(spriteRenderer.color[0], spriteRenderer.color[1], spriteRenderer.color[2]);       
         // If Y coordinate of board is lower than he bottom Y coordinate of the main camera, delete the board.
         Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
         if (this.transform.position.y < stageDimensions.y) {
