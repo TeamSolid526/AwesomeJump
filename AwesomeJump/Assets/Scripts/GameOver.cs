@@ -26,6 +26,7 @@ public class GameOver : MonoBehaviour
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
             PlayerData.score = score;
             PlayerData.height_score = Math.Max(PlayerData.height_score, score);
+            PlayerData.health = maxHealth;
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
             }
