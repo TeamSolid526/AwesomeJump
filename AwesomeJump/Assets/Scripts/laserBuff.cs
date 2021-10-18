@@ -19,7 +19,7 @@ public class laserBuff : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Character") {
-			col.gameObject.GetComponent<Player>().laserBuff += 1;
+			col.gameObject.GetComponent<Player>().laserBuff = true;
         }
     }
 }
