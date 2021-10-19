@@ -21,11 +21,12 @@ public static class PlayerData
     public static void debug()
     {
         Debug.Log("hook: " + hooks + ", lasers: " + lasers + ", total_laser_damage: " + total_laser_damage + ", failWay: " + failWay +
-        ", score: " + score + ", height_score: " + height_score + ", buff: " + buff + ", debuff: " + debuff);
+        ", score: " + score + ", height_score: " + height_score + ", buff: " + buff + ", debuff: " + debuff + ", health:"+health);
     }
 
     public static void UploadData()
     {
+        Debug.Log("health"+health);
         Dictionary<string, object> data = new Dictionary<string, object> {
             {"hooks", hooks},
             {"lasers", lasers},
@@ -39,7 +40,7 @@ public static class PlayerData
         };
         AnalyticsResult res = Analytics.CustomEvent("PlayerData", data);
         Debug.Log("Upload player data" + res);
-        clear();
+        //clear();
     }
 
     // Reset user data when player dead.

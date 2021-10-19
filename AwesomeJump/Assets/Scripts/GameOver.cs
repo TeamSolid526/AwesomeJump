@@ -22,11 +22,14 @@ public class GameOver : MonoBehaviour
             //scoreText.text = "Game Over.";
             score = GameObject.Find("Text").GetComponent<Score>().max;
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
-            Debug.Log(score);
+            Debug.Log("maxHealth");
+            Debug.Log(maxHealth);
+      
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
             PlayerData.score = score;
             PlayerData.height_score = Math.Max(PlayerData.height_score, score);
             PlayerData.health = maxHealth;
+            
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
             }

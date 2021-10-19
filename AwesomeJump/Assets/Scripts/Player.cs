@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
         }
         healthText.text = "Health: " + health.ToString();
         if(health > maxHealth){
+            
             maxHealth = health;
         }
     }
