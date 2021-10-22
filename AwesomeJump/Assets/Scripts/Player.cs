@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         Debug.Log(jump);
 		laserBuff = false;
-        fallenProtect = true;
+        fallenProtect = false;
     }
 
     // Update is called once per frame

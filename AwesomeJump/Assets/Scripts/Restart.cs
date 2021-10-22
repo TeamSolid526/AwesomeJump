@@ -1,3 +1,4 @@
+using System.Diagnostics;
 //using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
@@ -9,5 +10,7 @@ public class Restart : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        UnityEngine.Debug.Log("sssssssssss");
+        print("ssssss");
     }
 }
