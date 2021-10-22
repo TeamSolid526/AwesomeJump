@@ -26,6 +26,9 @@ public class laserMid : MonoBehaviour
 				Debug.Log("MID!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
 				flag = 1;
 			}
+			else{
+				col.gameObject.GetComponent<Player>().laserBuff = false;
+			}
         }
     }
 }

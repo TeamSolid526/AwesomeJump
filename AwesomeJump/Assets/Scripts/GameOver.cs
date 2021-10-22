@@ -13,11 +13,27 @@ public class GameOver : MonoBehaviour
     public GameOverScene GameOverScene;
     public int score;
     private bool flag = true;
+    private bool rebornFlag = false;
     public float maxHealth;
+    private bool protect;
+    private float JUMPFORCE = 30f;
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
     {
+        protect = character.gameObject.GetComponent<Player>().fallenProtect;
+        
+        if(protect && character.position.y < cameraPos.position.y - 6f){
+                Vector2 velocity = character.gameObject.GetComponent<Rigidbody2D>().velocity;
+                velocity.y = JUMPFORCE;
+                character.gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
+                rebornFlag = true;
+                return;
+        }
+        if(rebornFlag == true && character.position.y > cameraPos.position.y - 6f) {
+            character.gameObject.GetComponent<Player>().fallenProtect = false;
+            rebornFlag = false;
+        }
         if(flag &&( character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0)){
             //scoreText.text = "Game Over.";
             score = GameObject.Find("Text").GetComponent<Score>().max;
@@ -29,7 +45,10 @@ public class GameOver : MonoBehaviour
             PlayerData.score = score;
             PlayerData.height_score = Math.Max(PlayerData.height_score, score);
             PlayerData.health = maxHealth;
+<<<<<<< HEAD
             
+=======
+>>>>>>> 2ad971492ee7d0f1ff1c4cd914483ceadf1e707c
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
             }
@@ -37,8 +56,8 @@ public class GameOver : MonoBehaviour
                 PlayerData.failWay = "negative points";
             }
             // TODO: uncomment this function to upload data to dashboard
-            PlayerData.UploadData();
             PlayerData.debug();
+            PlayerData.UploadData();
             PlayerData.clear();
             GameOverScene.Setup();
             flag = false;

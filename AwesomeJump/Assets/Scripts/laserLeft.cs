@@ -27,6 +27,9 @@ public class laserLeft : MonoBehaviour
 				Debug.Log("Left!!!!!!" + col.gameObject.GetComponent<Player>().laserBuff);
 				flag = 1;
 			}
+			else{
+				col.gameObject.GetComponent<Player>().laserBuff = false;
+			}
         }
     }
 }

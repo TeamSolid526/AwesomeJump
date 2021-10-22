@@ -2121,6 +2121,7 @@ MonoBehaviour:
   colortype: 1
   laser: {fileID: 0}
   laserBuff: 0
+  fallenProtect: 0
   hooked: 0
   jump: 1
   JUMPFORCE: 10
