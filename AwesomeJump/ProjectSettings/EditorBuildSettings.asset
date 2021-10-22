@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 57104415274824b31acc9a9ad4179598
+  - enabled: 1
+    path: Assets/Scenes/ChoosingBuff.unity
+    guid: 76c92070c732148ee86a1282b7f802b5
   m_configObjects: {}
