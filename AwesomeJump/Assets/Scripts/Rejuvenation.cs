@@ -43,10 +43,11 @@ public class Rejuvenation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
-        // if (this.transform.position.y < stageDimensions.y) {
-        //     Destroy(this.gameObject);
-        // }
+        // destroy object when out of screen
+        Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        if (this.transform.position.y < stageDimensions.y) {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision){
@@ -56,7 +57,11 @@ public class Rejuvenation : MonoBehaviour
             collision.gameObject.GetComponent<Player>().health += (int) bonus;
             property.rejBonus *= 1.2f;
         }
-        
+        // destroy the object once player hit it
+        if (collision.gameObject.GetComponent<Player>())
+        {
+            Destroy(this.gameObject);
+        }
         // if (property.fragile){
         //         Destroy(this.gameObject);
         //         return;

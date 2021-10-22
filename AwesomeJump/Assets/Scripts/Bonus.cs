@@ -7,7 +7,6 @@ public class Bonus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // TODO: Set bonus type
     }
 
     // Update is called once per frame

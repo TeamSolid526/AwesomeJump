@@ -26,8 +26,32 @@ public class Player : MonoBehaviour
     public bool jump = true;
     private int countSameColor = 0;
 
+    private GameObject buffTexture;
+
     public float JUMPFORCE = 10f;
     public int maxHealth = 0;
+
+    public void ChangeSprite() 
+    {
+        if (laserBuff)
+        {
+            Sprite sp = buffTexture.GetComponent<ChangeSprite>().shieldSprite;
+            buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
+            Vector3 localScale = buffTexture.transform.localScale;
+            localScale.x = 0.04f;
+            localScale.y = 0.04f;
+            buffTexture.transform.localScale = localScale;
+        } 
+        else if (fallenProtect)
+        {
+            Sprite sp = buffTexture.GetComponent<ChangeSprite>().fallenProtectSprite;
+            buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
+            Vector3 localScale = buffTexture.transform.localScale;
+            localScale.x = 0.8f;
+            localScale.y = 0.2f;
+            buffTexture.transform.localScale = localScale;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +60,8 @@ public class Player : MonoBehaviour
         Debug.Log(jump);
 		laserBuff = false;
         fallenProtect = false;
+
+        buffTexture = transform.Find("buffTexture").gameObject;
     }
 
     // Update is called once per frame
@@ -75,6 +101,13 @@ public class Player : MonoBehaviour
         if(health > maxHealth){
             maxHealth = health;
         }
+
+        if (!laserBuff && !fallenProtect)
+        {
+            buffTexture.GetComponent<SpriteRenderer>().sprite = null;
+            
+        }
+
     }
 
     void FixedUpdate() {
@@ -120,20 +153,12 @@ public class Player : MonoBehaviour
                 hooked = false;
                 Vector3 p = other.transform.position;
                 Vector2 v = rb.velocity;
-                
-            
-                
-                
+           
                 p.y += 0.5f;
                 
                 transform.position = p;
                 rb.velocity = direction * 0.2f;
             }
-        }
-        
-        if (other.gameObject.GetComponent<Bonus>()) {
-            Destroy(other.gameObject);
-            //TODO: Active bonus behavior
         }
        
     }
