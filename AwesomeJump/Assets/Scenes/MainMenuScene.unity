@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000039041042, y: 94}
-  m_SizeDelta: {x: 312.5406, y: 102.1188}
+  m_AnchoredPosition: {x: -0.000013351, y: 106}
+  m_SizeDelta: {x: 370.8935, y: 121.1849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &248525050
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07155e54cd7da4936b4f4ff9fe03c485, type: 3}
-    m_FontSize: 32
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -790,8 +790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3999939, y: -63.710007}
-  m_SizeDelta: {x: 166.86926, y: 52.89749}
+  m_AnchoredPosition: {x: 4.999998, y: -26.7276}
+  m_SizeDelta: {x: 211.1575, y: 66.9369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073399995
 MonoBehaviour:
@@ -933,8 +933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5573044}
-  m_AnchoredPosition: {x: -0.000015259, y: -108.399994}
-  m_SizeDelta: {x: 686.1943, y: 275.3871}
+  m_AnchoredPosition: {x: -0.2011, y: -35.697}
+  m_SizeDelta: {x: 685.79, y: 159.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166199964
 MonoBehaviour:
@@ -958,22 +958,30 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07155e54cd7da4936b4f4ff9fe03c485, type: 3}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 50
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Jump on the boards with the same color as the character to get additional
+  m_Text: '- Jump on the boards with the same color as the character to get additional
     health
 
-    Pass Laser and boards with different color from the character will
-    lose health'
+    - Pass Laser and boards with different color from the character will
+    lose health
+
+    - Continuously landing on three board with the same color as
+    character will award you a hook which enable you to reach any boards in the screen
+    range.
+
+    - Choose the buff before the game to survive longer.
+
+'
 --- !u!222 &1166199965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1290,8 +1298,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3999939, y: -139}
-  m_SizeDelta: {x: 166.86926, y: 52.89749}
+  m_AnchoredPosition: {x: 5, y: -122}
+  m_SizeDelta: {x: 211.1575, y: 66.9369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859681000
 MonoBehaviour:
