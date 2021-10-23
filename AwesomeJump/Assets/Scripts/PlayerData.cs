@@ -17,15 +17,40 @@ public static class PlayerData
     public static int buff = 0;
     public static int debuff = 0;
     public static float health = 0;
+    public static int shield = 0;
+    public static int booster = 0;
+    public static int rejuvenation = 0;
+    public static int fallenProtect = 0;
+
 
     public static void debug()
     {
         Debug.Log("hook: " + hooks + ", lasers: " + lasers + ", total_laser_damage: " + total_laser_damage + ", failWay: " + failWay +
-        ", score: " + score + ", height_score: " + height_score + ", buff: " + buff + ", debuff: " + debuff);
+        ", score: " + score + ", height_score: " + height_score + ", buff: " + buff + ", debuff: " + debuff +
+        ", shield: " + shield + ", booster: " + booster + ", rejuvenation: " + rejuvenation + ", fallenProtect: " + fallenProtect);
     }
+
+    private class Buff
+    {
+        public int shieldCnt { get; set; }
+        public int boosterCnt { get; set; }
+        public int rejuvenationCnt { get; set; }
+        public int fallenProtectCnt { get; set; }
+    }
+
+
 
     public static void UploadData()
     {
+        Buff buffCnt = new Buff {
+            shieldCnt = shield,
+            boosterCnt = booster,
+            rejuvenationCnt = rejuvenation,
+            fallenProtectCnt = fallenProtect
+        };
+
+        string buffString = JsonUtility.ToJson(buffCnt);
+
         Dictionary<string, object> data = new Dictionary<string, object> {
             {"hooks", hooks},
             {"lasers", lasers},
@@ -35,7 +60,8 @@ public static class PlayerData
             {"health", health},
             {"height_score", height_score},
             {"buff", buff},
-            {"defuff", debuff}
+            {"defuff", debuff},
+            {"buffChoices", buffString}
         };
         AnalyticsResult res = Analytics.CustomEvent("PlayerData", data);
         Debug.Log("Upload player data" + res);

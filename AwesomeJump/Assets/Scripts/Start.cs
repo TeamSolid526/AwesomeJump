@@ -20,24 +20,28 @@ public class Start : MonoBehaviour
 
     public void StartGameWithShield()
     {      
+        PlayerData.shield++;
         SceneManager.LoadScene("SampleScene");
         bt.buffTypeNum = 0;
     }
 
     public void StartGameWithBooster()
     {      
+        PlayerData.booster++;
         SceneManager.LoadScene("SampleScene");
         bt.buffTypeNum = 1;
     }
 
     public void StartGameWithRejuvenation()
     {      
+        PlayerData.rejuvenation++;
         SceneManager.LoadScene("SampleScene");
         bt.buffTypeNum = 2;
     }
 
     public void StartGameWithFallenProtect()
     {      
+        PlayerData.fallenProtect++;
         SceneManager.LoadScene("SampleScene");
         bt.buffTypeNum = 3;
     }
