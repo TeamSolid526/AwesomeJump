@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
     public float JUMPFORCE = 10f;
     public int maxHealth = 0;
 
+    public float buttondirection = 0;
+    private bool buttonLeft;
+    private bool buttonRight;
+
+
     public void ChangeSprite() 
     {
         if (laserBuff)
@@ -52,6 +57,19 @@ public class Player : MonoBehaviour
             buffTexture.transform.localScale = localScale;
         }
     }
+    //Left and Right button actions
+    public void PointerDownLeft(){
+        buttonLeft = true;
+    }
+    public void PointerUpLeft(){
+        buttonLeft = false;
+    }
+    public void PointerDownRight(){
+        buttonRight = true;
+    }
+    public void PointerUpRight(){
+        buttonRight = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -62,13 +80,30 @@ public class Player : MonoBehaviour
         fallenProtect = false;
 
         buffTexture = transform.Find("buffTexture").gameObject;
+        buttonLeft = false;
+        buttonRight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-		
+        if(rb.position.x > 7.5f){
+            Vector2 position = rb.position;
+            position.x = -7.5f;
+            rb.position = position;
+        }
+        if(rb.position.x < -7.5f){
+            Vector2 position = rb.position;
+            position.x = 7.5f;
+            rb.position = position;
+        }
         movement = Input.GetAxis("Horizontal") * speed;
+        if(buttonLeft && movement >= 0){
+            movement -= speed;
+        }
+        else if (buttonRight && movement <= 0){
+            movement += speed;
+        }
             Vector2 velocity = rb.velocity;
             velocity.x = movement;
             rb.velocity = velocity;
