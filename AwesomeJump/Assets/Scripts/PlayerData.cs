@@ -30,25 +30,23 @@ public static class PlayerData
         ", shield: " + shield + ", booster: " + booster + ", rejuvenation: " + rejuvenation + ", fallenProtect: " + fallenProtect);
     }
 
-    private class Buff
+    public class Buff
     {
-        public int shieldCnt { get; set; }
-        public int boosterCnt { get; set; }
-        public int rejuvenationCnt { get; set; }
-        public int fallenProtectCnt { get; set; }
+        public int shieldCnt;
+        public int boosterCnt;
+        public int rejuvenationCnt;
+        public int fallenProtectCnt;
     }
 
 
 
     public static void UploadData()
     {
-        Buff buffCnt = new Buff {
-            shieldCnt = shield,
-            boosterCnt = booster,
-            rejuvenationCnt = rejuvenation,
-            fallenProtectCnt = fallenProtect
-        };
-
+        Buff buffCnt = new Buff();
+        buffCnt.shieldCnt = shield;
+        buffCnt.boosterCnt = booster;
+        buffCnt.rejuvenationCnt = rejuvenation;
+        buffCnt.fallenProtectCnt = fallenProtect;
         string buffString = JsonUtility.ToJson(buffCnt);
 
         Dictionary<string, object> data = new Dictionary<string, object> {
@@ -63,6 +61,7 @@ public static class PlayerData
             {"defuff", debuff},
             {"buffChoices", buffString}
         };
+        Debug.Log("buffString: " + buffString);
         AnalyticsResult res = Analytics.CustomEvent("PlayerData", data);
         Debug.Log("Upload player data" + res);
         clear();
