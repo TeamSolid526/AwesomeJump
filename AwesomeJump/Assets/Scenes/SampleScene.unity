@@ -2956,10 +2956,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5003806080483479039, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6303219572705024075, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3012,8 +3008,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserMid
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5003806080483479039, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6dfcffb32dbd9c459178c149ce6e60a, type: 3}
 --- !u!1 &2127241098
 GameObject:
