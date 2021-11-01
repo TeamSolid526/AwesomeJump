@@ -45,10 +45,6 @@ public class GameOver : MonoBehaviour
             PlayerData.score = score;
             PlayerData.height_score = Math.Max(PlayerData.height_score, score);
             PlayerData.health = maxHealth;
-<<<<<<< HEAD
-            
-=======
->>>>>>> 2ad971492ee7d0f1ff1c4cd914483ceadf1e707c
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
             }

@@ -13,13 +13,17 @@ public class Booster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // destroy when object out of screen
+        Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        if (this.transform.position.y < stageDimensions.y) {
+            Destroy(this.gameObject);
+        }
     }
 
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter detected");
+        //Debug.Log("enter detected");
 
 
         if (other.gameObject.name == "Character")
@@ -32,6 +36,8 @@ public class Booster : MonoBehaviour
                 velocity.y = 40f;
                 rb.velocity = velocity;
             }
+            // destroy after player hit it
+            Destroy(this.gameObject);
         }
     }
 

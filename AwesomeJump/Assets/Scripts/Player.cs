@@ -26,8 +26,50 @@ public class Player : MonoBehaviour
     public bool jump = true;
     private int countSameColor = 0;
 
+    private GameObject buffTexture;
+
     public float JUMPFORCE = 10f;
     public int maxHealth = 0;
+
+    public float buttondirection = 0;
+    private bool buttonLeft;
+    private bool buttonRight;
+
+
+    public void ChangeSprite() 
+    {
+        if (laserBuff)
+        {
+            Sprite sp = buffTexture.GetComponent<ChangeSprite>().shieldSprite;
+            buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
+            Vector3 localScale = buffTexture.transform.localScale;
+            localScale.x = 0.04f;
+            localScale.y = 0.04f;
+            buffTexture.transform.localScale = localScale;
+        } 
+        else if (fallenProtect)
+        {
+            Sprite sp = buffTexture.GetComponent<ChangeSprite>().fallenProtectSprite;
+            buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
+            Vector3 localScale = buffTexture.transform.localScale;
+            localScale.x = 0.8f;
+            localScale.y = 0.2f;
+            buffTexture.transform.localScale = localScale;
+        }
+    }
+    //Left and Right button actions
+    public void PointerDownLeft(){
+        buttonLeft = true;
+    }
+    public void PointerUpLeft(){
+        buttonLeft = false;
+    }
+    public void PointerDownRight(){
+        buttonRight = true;
+    }
+    public void PointerUpRight(){
+        buttonRight = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -35,14 +77,33 @@ public class Player : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         Debug.Log(jump);
 		laserBuff = false;
-        fallenProtect = true;
+        fallenProtect = false;
+
+        buffTexture = transform.Find("buffTexture").gameObject;
+        buttonLeft = false;
+        buttonRight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-		
+        if(rb.position.x > 7.5f){
+            Vector2 position = rb.position;
+            position.x = -7.5f;
+            rb.position = position;
+        }
+        if(rb.position.x < -7.5f){
+            Vector2 position = rb.position;
+            position.x = 7.5f;
+            rb.position = position;
+        }
         movement = Input.GetAxis("Horizontal") * speed;
+        if(buttonLeft && movement >= 0){
+            movement -= speed;
+        }
+        else if (buttonRight && movement <= 0){
+            movement += speed;
+        }
             Vector2 velocity = rb.velocity;
             velocity.x = movement;
             rb.velocity = velocity;
@@ -76,6 +137,13 @@ public class Player : MonoBehaviour
             
             maxHealth = health;
         }
+
+        if (!laserBuff && !fallenProtect)
+        {
+            buffTexture.GetComponent<SpriteRenderer>().sprite = null;
+            
+        }
+
     }
 
     void FixedUpdate() {
@@ -121,20 +189,12 @@ public class Player : MonoBehaviour
                 hooked = false;
                 Vector3 p = other.transform.position;
                 Vector2 v = rb.velocity;
-                
-            
-                
-                
+           
                 p.y += 0.5f;
                 
                 transform.position = p;
                 rb.velocity = direction * 0.2f;
             }
-        }
-        
-        if (other.gameObject.GetComponent<Bonus>()) {
-            Destroy(other.gameObject);
-            //TODO: Active bonus behavior
         }
        
     }

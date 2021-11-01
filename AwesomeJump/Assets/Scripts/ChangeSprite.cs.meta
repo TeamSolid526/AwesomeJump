@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 1bf6d41069e8545669f4a8b4a1c7a7b2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shieldSprite: {fileID: 21300000, guid: 6b97cfb9945384947a0e870287030d6c, type: 3}
+  - fallenProtectSprite: {fileID: 21300000, guid: a876a052fb10f4ac595038159b0420dd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
