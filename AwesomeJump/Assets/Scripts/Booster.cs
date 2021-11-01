@@ -33,7 +33,7 @@ public class Booster : MonoBehaviour
             if (rb != null)
             {
                 Vector2 velocity = rb.velocity;
-                velocity.y = 40f;
+                velocity.y = 25f;
                 rb.velocity = velocity;
             }
             // destroy after player hit it
