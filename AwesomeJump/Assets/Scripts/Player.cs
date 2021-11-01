@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject laser;
 	public bool laserBuff;
     public bool fallenProtect;
+    public float rejBooster = 1.2f;
     Rigidbody2D rb;
     Vector3 worldMousePosition;
     Vector2 direction;
@@ -76,6 +77,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         Debug.Log(jump);
+        // Debug.Log(rejBooster);
+        rejBooster = 1.2f;
+        // Debug.Log(rejBooster);
 		laserBuff = false;
         fallenProtect = false;
 

@@ -95,7 +95,7 @@ public class Platform : MonoBehaviour
                     collision.collider.gameObject.GetComponent<Player>().health -= (int) property.value * (1 + (int) collision.collider.gameObject.GetComponent<Player>().highestY / 100) * collision.collider.gameObject.GetComponent<Player>().colortype;
                     PlayerData.debuff++;
                 }
-                Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
+                // Debug.Log(collision.collider.gameObject.GetComponent<Player>().health);
             }
             // Destroy board if board is fragile
             if (property.fragile){
