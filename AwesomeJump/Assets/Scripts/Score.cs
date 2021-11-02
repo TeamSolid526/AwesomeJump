@@ -47,12 +47,12 @@ public class Score : MonoBehaviour
         }else{
             hookNum = 0;
         }
-
+        // Debug.Log("max"+max);
         //scoreOnly.text = "Score: " + max.ToString("0") + "\n";
         scoreText.text = "Score: " + max.ToString("0") + "\n" +
          "Hooks: " + hookNum.ToString() + "\n" +
          "Laser in " + curTimeRemain.ToString("0") + "s";
 
-        //Debug.Log(character.position.y);
+        //Debug.Log(character.position.y);gi
     }
 }
