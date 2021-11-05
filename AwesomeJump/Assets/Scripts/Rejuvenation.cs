@@ -30,14 +30,14 @@ public class Rejuvenation : MonoBehaviour
 {
     public RejProperty property;
     public string type = "buff";
-    public float value = 20.0f;
-    public float rejBonus = 1.0f;
+    public float value = 100.0f;
+    public float rejBonus = 1.2f;
     public bool fragile = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        property = new RejProperty("buff", 20, 1, true);
+        property = new RejProperty("buff", 66f, 1.2f, true);
     }
 
     // Update is called once per frame
@@ -53,9 +53,12 @@ public class Rejuvenation : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
         
         if (property.type == "buff") {
-            float bonus = property.value * property.rejBonus;
+            float bonus = property.value * property.rejBonus * collision.gameObject.GetComponent<Player>().rejBooster;
+            // Debug.Log(bonus);
+            // Debug.Log(collision.gameObject.GetComponent<Player>().rejBooster);
             collision.gameObject.GetComponent<Player>().health += (int) bonus;
-            property.rejBonus *= 1.2f;
+            collision.gameObject.GetComponent<Player>().rejBooster *= 1.2f;
+
         }
         // destroy the object once player hit it
         if (collision.gameObject.GetComponent<Player>())
