@@ -1601,8 +1601,11 @@ MonoBehaviour:
   boosterPrefab: {fileID: 4489449602529230703, guid: 484dbdd8e3b090943977884570c14bea, type: 3}
   rejuvenationPrefab: {fileID: 535106959775364173, guid: c8ab3283aefd941e18fc56c582ef8c4c, type: 3}
   fallenProtectPrefab: {fileID: 4445831381749743904, guid: 1884d0905e22e411ebb6c6ae9ad700ba, type: 3}
+  CoinPrefab: {fileID: 1840455096704420831, guid: 321160d1638df4696a289a35f534df44, type: 3}
   cameraPos: {fileID: 519420032}
   generateTime: 15
+  coinGenerateTime: 4
+  rangeX: 3
 --- !u!4 &852838431
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,6 +2152,7 @@ MonoBehaviour:
   laser: {fileID: 0}
   laserBuff: 0
   fallenProtect: 0
+  rejBooster: 1.2
   hooked: 0
   jump: 1
   JUMPFORCE: 10
