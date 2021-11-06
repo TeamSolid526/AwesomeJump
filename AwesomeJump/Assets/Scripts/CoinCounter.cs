@@ -13,6 +13,6 @@ public class CoinCounter : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(totalCoins);
+        //Debug.Log(totalCoins);
     }
 }
