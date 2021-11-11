@@ -36,7 +36,7 @@ public class GameOver : MonoBehaviour
         }
         if(flag &&( character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0)){
             //scoreText.text = "Game Over.";
-            score = GameObject.Find("Text").GetComponent<Score>().max;
+            score = GameObject.Find("Score").GetComponent<Score>().max;
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
             Debug.Log(score);
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
