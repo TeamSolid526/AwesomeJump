@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     Vector3 lineStartPoint;
     public bool hooked = false;
     public bool jump = true;
-    private int countSameColor = 0;
+    public int countSameColor = 0;
 
     private GameObject buffTexture;
 
