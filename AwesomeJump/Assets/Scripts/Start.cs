@@ -45,4 +45,9 @@ public class Start : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         bt.buffTypeNum = 3;
     }
+    public void StartGameWithoutBoost()
+    {      
+        SceneManager.LoadScene("SampleScene");
+        bt.buffTypeNum = 4;
+    }
 }

@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     public Transform character;
     public GameOverScene GameOverScene;
     public int score;
+    public Score findScore;
     private bool flag = true;
     private bool rebornFlag = false;
     public float maxHealth;
@@ -36,10 +37,26 @@ public class GameOver : MonoBehaviour
         }
         if(flag &&( character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0)){
             //scoreText.text = "Game Over.";
-            score = GameObject.Find("Text").GetComponent<Score>().max;
+        
+            score = GameObject.Find("Canvas/Text").GetComponent<Score>().max;
+            if (GameObject.Find("Text")!=null){
+                Debug.Log("FindText");
+                Debug.Log(GameObject.Find("Text"));
+            }
+            else{
+                Debug.Log("Cannot Find Text");
+            }
+            if (GameObject.Find("Canvas/Text").GetComponent<Score>()!=null){
+                Debug.Log("FindScore!!!!");
+                Debug.Log(GameObject.Find("Canvas/Text").GetComponent<Score>().max);
+            }
+            else{
+                Debug.Log(GameObject.Find("Canvas/Text").GetComponent<Score>().max);
+                Debug.Log("Cannot Find Score!!!!");
+            }
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
             Debug.Log("maxHealth");
-            Debug.Log(maxHealth);
+          
       
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
             PlayerData.score = score;

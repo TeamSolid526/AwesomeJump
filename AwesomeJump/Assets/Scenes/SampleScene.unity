@@ -1826,6 +1826,7 @@ MonoBehaviour:
   character: {fileID: 1269469353}
   GameOverScene: {fileID: 184797365}
   score: 0
+  findScore: {fileID: 0}
   maxHealth: 0
 --- !u!114 &1186034101
 MonoBehaviour:
@@ -1998,6 +1999,7 @@ MonoBehaviour:
   scoreText: {fileID: 1255539818}
   hookNum: 0
   timeRemain: 30
+  maxScore: 0
   max: 0
   curTimeRemain: 0
 --- !u!114 &1255539818
@@ -2149,6 +2151,7 @@ MonoBehaviour:
   laser: {fileID: 0}
   laserBuff: 0
   fallenProtect: 0
+  rejBooster: 1.2
   hooked: 0
   jump: 1
   JUMPFORCE: 10
@@ -3329,6 +3332,10 @@ PrefabInstance:
     - target: {fileID: 9220550986856489247, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489247, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}

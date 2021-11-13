@@ -18,12 +18,13 @@ public class Score : MonoBehaviour
     public int hookNum = 0;
     public float timeRemain = 30;
     // Start is called before the first frame update
-
+    public int maxScore = 0;
     public int max = 0;
     public float curTimeRemain;
 
     void Start() {
         curTimeRemain = timeRemain;
+        maxScore = 0;
     }
     // Update is called once per frame
     void Update()
@@ -52,7 +53,7 @@ public class Score : MonoBehaviour
         scoreText.text = "Score: " + max.ToString("0") + "\n" +
          "Hooks: " + hookNum.ToString() + "\n" +
          "Laser in " + curTimeRemain.ToString("0") + "s";
-
+        maxScore = max;
         //Debug.Log(character.position.y);gi
     }
 }
