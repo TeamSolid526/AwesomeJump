@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public float smoothSpeed = .3f;
     
-    private Vector3 currentVelocity;
+    public Vector3 currentVelocity;
     
     // Update is called once per frame
     void Update()
