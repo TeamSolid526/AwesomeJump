@@ -2364,12 +2364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1269469353}
   scoreText: {fileID: 1255539818}
-<<<<<<< HEAD
   hookNum: 0
   timeRemain: 30
   maxScore: 0
-=======
->>>>>>> eedc89b830ec24486d0905706d1fa619a264eb3a
   max: 0
 --- !u!114 &1255539818
 MonoBehaviour:
