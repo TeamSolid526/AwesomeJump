@@ -37,7 +37,6 @@ public class GameOver : MonoBehaviour
         }
         if(flag &&( character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0)){
             //scoreText.text = "Game Over.";
-<<<<<<< HEAD
         
             score = GameObject.Find("Canvas/Text").GetComponent<Score>().max;
             if (GameObject.Find("Text")!=null){
@@ -55,9 +54,6 @@ public class GameOver : MonoBehaviour
                 Debug.Log(GameObject.Find("Canvas/Text").GetComponent<Score>().max);
                 Debug.Log("Cannot Find Score!!!!");
             }
-=======
-            score = GameObject.Find("Score").GetComponent<Score>().max;
->>>>>>> eedc89b830ec24486d0905706d1fa619a264eb3a
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
             Debug.Log("maxHealth");
           
