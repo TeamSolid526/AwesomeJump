@@ -92,6 +92,9 @@ public class BonusGenerator : MonoBehaviour
                 {
                     bonus = Instantiate(fallenProtectPrefab, bonusPos, Quaternion.identity);                                   
                 }
+                 else if (bt.buffTypeNum == 4)
+                {
+                 }
                 else
                 {
                     bonus = Instantiate(bonusPrefab, bonusPos, Quaternion.identity);   
