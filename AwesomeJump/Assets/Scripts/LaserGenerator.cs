@@ -15,7 +15,7 @@ public class LaserGenerator : MonoBehaviour
 	private Score score;
 
 	public int laserNum = 0;
-	private int sequence = 0;
+	public int sequence = 0;
 	private float[] order;
     // Update is called once per frame
 	private void Start()
