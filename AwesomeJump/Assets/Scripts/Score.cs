@@ -12,6 +12,7 @@ public class Score : MonoBehaviour
     
     public Transform character;
     public Text scoreText;
+<<<<<<< HEAD
     //public Text scoreOnly;
     private GameObject character2;
     private Player score;
@@ -27,11 +28,16 @@ public class Score : MonoBehaviour
         maxScore = 0;
     }
     // Update is called once per frame
+=======
+
+    public int max = 0;
+>>>>>>> 0b82f82f5816c4d2bcfaed0fcfcbe5ec0619108d
     void Update()
     {
         if(character.position.y > max){
             max = (int)character.position.y;
         }
+<<<<<<< HEAD
         //curTimeRemain -= Time.deltaTime;
 		curTimeRemain = GameObject.Find("LaserGenerator").GetComponent<LaserGenerator>().timer;
         //if(curTimeRemain < 0){
@@ -55,5 +61,11 @@ public class Score : MonoBehaviour
          "Laser in " + curTimeRemain.ToString("0") + "s";
         maxScore = max;
         //Debug.Log(character.position.y);gi
+=======
+
+        scoreText.text = "Score: " + max.ToString("0");
+
+        //Debug.Log(character.position.y);
+>>>>>>> 0b82f82f5816c4d2bcfaed0fcfcbe5ec0619108d
     }
 }
