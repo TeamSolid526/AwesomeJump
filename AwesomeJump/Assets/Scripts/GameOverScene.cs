@@ -9,9 +9,11 @@ public class GameOverScene : MonoBehaviour
     public Text scoreText;
     public Score score;
     public Player player;
+    private CoinCounter ct;
     public void Setup() {
+        ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();  
         player.enabled = false;
         gameObject.SetActive(true);
-        scoreText.text = "Your Score:" + score.max.ToString();
+        scoreText.text = "Your Score:" + score.max.ToString()+"\n"+"Your coins:"+ct.totalCoins.ToString();
     }
 }
