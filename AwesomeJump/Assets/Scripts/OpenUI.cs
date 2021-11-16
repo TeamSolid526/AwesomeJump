@@ -15,4 +15,9 @@ public class OpenUI : MonoBehaviour
     {
         scene.SetActive(false);
     }
+    public void onclickDeactiveAndConitue()
+    {
+        scene.SetActive(false);
+        Time.timeScale = 1;
+    }
 }

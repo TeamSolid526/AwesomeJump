@@ -10,6 +10,7 @@ public class LaserGenerator : MonoBehaviour
 	public GameObject LaserRight;
 	public Transform cameraPos;
 	public float timer = 30.0f;
+	public GameObject tutorial;
 	//public Transform text;
 	private GameObject time;
 	private Score score;
@@ -24,9 +25,16 @@ public class LaserGenerator : MonoBehaviour
 		timer = 30.0f;
 		order = new float[]{-5f,0f,5f};
 	}
-
+	private int judge = 0;
 	private void generateLaser()
-	{
+	{	
+		if(judge == 0){
+			Time.timeScale = 0;
+			LaserTutorialScene t = tutorial.GetComponent<LaserTutorialScene>();
+			t.Setup();
+			judge = 1;
+		}
+		
 		sequence ++;
 		if(sequence >= 3){
 			sequence = 0;
@@ -51,6 +59,7 @@ public class LaserGenerator : MonoBehaviour
 		if((int)timer <= 0 && laserNum <= 0){
 			generateLaser();
 			timer = 30f;
+
 		}
 	}
 }

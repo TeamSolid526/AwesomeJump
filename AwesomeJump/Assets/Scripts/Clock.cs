@@ -7,7 +7,7 @@ public class Clock : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text scoreText;
-    private float timeRemain = 30;
+    private float timeRemain = 5;
     private float curTimeRemain;
     void Start()
     {
