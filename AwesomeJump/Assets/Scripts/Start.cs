@@ -15,7 +15,7 @@ public class Start : MonoBehaviour
     private Button BoosterButton;
     private Button RejuvButton;
     private Button FallenProtectButton;
-    private GameObject gameObject;
+    private CoinCounter ct;
   
 
 
@@ -33,7 +33,7 @@ public class Start : MonoBehaviour
         RejuvButton = GameObject.Find("Rejuvenation").GetComponent<Button>();
         FallenProtectButtonText = GameObject.Find("FallenProtect/Text").GetComponent<Text>();
         FallenProtectButton = GameObject.Find("FallenProtect").GetComponent<Button>();
-         
+        
     }
 
     public void StartChoosingBuff()
@@ -110,6 +110,8 @@ public class Start : MonoBehaviour
         RejuvButton.enabled = true;
         FallenProtectButton.enabled = true;
         
-        bt.buffTypeNum = 4;
+        // bt.buffTypeNum = 4;
+        //   ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();
+        // ct.totalCoins = 0;  
     }
 }

@@ -8,8 +8,9 @@ public class CoinCounter : MonoBehaviour
     public int totalCoins;    
     void Start()
     {
-        totalCoins = 0;
-        DontDestroyOnLoad(this.gameObject);                
+
+       DontDestroyOnLoad(this.gameObject);   
+              
     }
 
     void Update()

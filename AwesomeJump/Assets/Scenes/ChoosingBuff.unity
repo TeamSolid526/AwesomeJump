@@ -336,7 +336,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Rejuvenation
 
-    Revive you when the game is ended'
+    Revive you when the health gets negative '
 --- !u!222 &105401840
 CanvasRenderer:
   m_ObjectHideFlags: 0
