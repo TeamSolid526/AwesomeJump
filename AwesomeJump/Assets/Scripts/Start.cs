@@ -51,6 +51,7 @@ public class Start : MonoBehaviour
             ShieldButtonText.text ="Bought";
             ShieldButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 50;
+            CoinEarned.shield = true;
             bt.buffTypeNum = 0;
         }
         else{}
@@ -65,6 +66,7 @@ public class Start : MonoBehaviour
             BoosterButtonText.text = "Bought";
             BoosterButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 100;
+            CoinEarned.booster = true;
             bt.buffTypeNum = 1;
         }
         else{}
@@ -77,6 +79,7 @@ public class Start : MonoBehaviour
         
         if(CoinEarned.totalEarnedCoins >= 80){
             CoinEarned.totalEarnedCoins -= 80;
+            CoinEarned.rejuvenation = true;
             PlayerData.rejuvenation++;
             RejuvButtonText.text = "Bought";
             RejuvButton.enabled = false;
@@ -95,6 +98,7 @@ public class Start : MonoBehaviour
             FallenProtectButtonText.text = "Bought";
             FallenProtectButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 70;
+            CoinEarned.fallenProtect = true;
             bt.buffTypeNum = 3;
         }else{}
         
@@ -111,8 +115,6 @@ public class Start : MonoBehaviour
         RejuvButton.enabled = true;
         FallenProtectButton.enabled = true;
         
-        // bt.buffTypeNum = 4;
-        //   ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();
-        // ct.totalCoins = 0;  
+        bt.buffTypeNum = 1;
     }
 }

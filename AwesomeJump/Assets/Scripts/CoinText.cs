@@ -10,8 +10,8 @@ public class CoinText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();   
-     ct.totalCoins = 0; 
+     ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();    
+     ct.totalCoins = 0;
     }
 
     // Update is called once per frame
