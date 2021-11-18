@@ -86,6 +86,12 @@ public class Player : MonoBehaviour
         buffTexture = transform.Find("buffTexture").gameObject;
         buttonLeft = false;
         buttonRight = false;
+
+        if (CoinEarned.booster) {
+            Vector2 velocity = rb.velocity;
+            velocity.y = 25f;
+            rb.velocity = velocity;
+        }
     }
 
     // Update is called once per frame
