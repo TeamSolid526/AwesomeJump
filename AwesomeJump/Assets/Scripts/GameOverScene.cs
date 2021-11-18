@@ -14,6 +14,15 @@ public class GameOverScene : MonoBehaviour
         ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();  
         player.enabled = false;
         gameObject.SetActive(true);
-        scoreText.text = "Your Score:" + score.max.ToString()+"\n"+"Your coins:"+ct.totalCoins.ToString();
+        Debug.Log("failway"+PlayerData.failWay);
+        if(PlayerData.failWay == "fall out"){
+           
+            GameObject.Find("GameOverText").GetComponent<Text>().text = "Game Over\nAhhh! You fell to death!";
+            
+        }else if (PlayerData.failWay == "negative points"){
+            GameObject.Find("GameOverText").GetComponent<Text>().text = "Game Over\nYou ran out of Health!";
+            
+        }
+        scoreText.text = "Your Score:" + score.max.ToString()+"\n"+"Your Coins:"+ct.totalCoins.ToString();
     }
 }
