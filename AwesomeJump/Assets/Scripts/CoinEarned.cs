@@ -10,6 +10,7 @@ public class CoinEarned : MonoBehaviour
     public static bool rejuvenation = false;
     public static bool fallenProtect = false;
     public static int totalEarnedCoins = 0;
+    public static int spent = 0;
     public Text CoinEarnedText;
     
     // Start is called before the first frame update

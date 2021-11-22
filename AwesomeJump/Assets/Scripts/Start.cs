@@ -16,8 +16,7 @@ public class Start : MonoBehaviour
     private Button RejuvButton;
     private Button FallenProtectButton;
     private CoinCounter ct;
-  
-
+    private int buff = 4;
 
     public void Awake()
     {
@@ -45,29 +44,37 @@ public class Start : MonoBehaviour
     public void StartGameWithShield()
     {      
         
-        if(CoinEarned.totalEarnedCoins >= 50){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 50){
+            resetButton();
             PlayerData.shield++;
       //  SceneManager.LoadScene("SampleScene");
             ShieldButtonText.text ="Bought";
             ShieldButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 50;
+            CoinEarned.spent = 50;
             CoinEarned.shield = true;
             bt.buffTypeNum = 0;
+            buff = 0;
         }
-        else{}
+        else{
+            Debug.Log("coins:      " + CoinEarned.spent + " " + CoinEarned.totalEarnedCoins);
+        }
         
     }
 
     public void StartGameWithBooster()
     {      
         
-        if(CoinEarned.totalEarnedCoins >= 100){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 100){
+            resetButton();
             PlayerData.booster++;
             BoosterButtonText.text = "Bought";
             BoosterButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 100;
+            CoinEarned.spent = 100;
             CoinEarned.booster = true;
             bt.buffTypeNum = 1;
+            buff = 1;
         }
         else{}
         // SceneManager.LoadScene("SampleScene");
@@ -77,14 +84,19 @@ public class Start : MonoBehaviour
     public void StartGameWithRejuvenation()
     {      
         
-        if(CoinEarned.totalEarnedCoins >= 80){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 80){
+            resetButton();
             CoinEarned.totalEarnedCoins -= 80;
+            CoinEarned.spent = 80;
             CoinEarned.rejuvenation = true;
             PlayerData.rejuvenation++;
             RejuvButtonText.text = "Bought";
             RejuvButton.enabled = false;
             bt.buffTypeNum = 2;
-        }else{}
+            buff = 2;
+        }else{
+            Debug.Log("coins:      " + CoinEarned.spent + " " + CoinEarned.totalEarnedCoins);
+        }
         // SceneManager.LoadScene("SampleScene");
         
     }
@@ -92,20 +104,24 @@ public class Start : MonoBehaviour
     public void StartGameWithFallenProtect()
     {      
        
-        if(CoinEarned.totalEarnedCoins >= 70){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 70){
+            resetButton();
              PlayerData.fallenProtect++;
         // SceneManager.LoadScene("SampleScene");
             FallenProtectButtonText.text = "Bought";
             FallenProtectButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 70;
+            CoinEarned.spent = 70;
             CoinEarned.fallenProtect = true;
             bt.buffTypeNum = 3;
+            buff = 3;
         }else{}
         
     }
     public void StartGameWithoutBoost()
     {      
         SceneManager.LoadScene("SampleScene");
+        CoinEarned.spent = 0;
         ShieldButtonText.text = "Buy";
         BoosterButtonText.text = "Buy";
         RejuvButtonText.text = "Buy";
@@ -115,6 +131,18 @@ public class Start : MonoBehaviour
         RejuvButton.enabled = true;
         FallenProtectButton.enabled = true;
         
-        bt.buffTypeNum = 1;
+        bt.buffTypeNum = buff;
+    }
+
+    public void resetButton() {
+        CoinEarned.totalEarnedCoins += CoinEarned.spent;
+        ShieldButtonText.text = "Buy";
+        BoosterButtonText.text = "Buy";
+        RejuvButtonText.text = "Buy";
+        FallenProtectButtonText.text = "Buy";
+        ShieldButton.enabled = true;
+        BoosterButton.enabled = true;
+        RejuvButton.enabled = true;
+        FallenProtectButton.enabled = true; 
     }
 }
