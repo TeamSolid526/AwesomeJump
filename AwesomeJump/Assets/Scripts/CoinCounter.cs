@@ -8,11 +8,13 @@ public class CoinCounter : MonoBehaviour
     public int totalCoins;    
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);                
+
+       DontDestroyOnLoad(this.gameObject);   
+              
     }
 
     void Update()
     {
-        //Debug.Log(totalCoins);
+       // Debug.Log("totalCoins"+totalCoins);
     }
 }
