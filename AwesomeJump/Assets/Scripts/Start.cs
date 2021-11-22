@@ -53,7 +53,7 @@ public class Start : MonoBehaviour
             CoinEarned.totalEarnedCoins -= 50;
             CoinEarned.spent = 50;
             CoinEarned.shield = true;
-            bt.buffTypeNum = 0;
+            bt.buffTypeNum = 1;
             buy = true;
         }
         else{
@@ -73,7 +73,7 @@ public class Start : MonoBehaviour
             CoinEarned.totalEarnedCoins -= 100;
             CoinEarned.spent = 100;
             CoinEarned.booster = true;
-            bt.buffTypeNum = 1;
+            bt.buffTypeNum = 2;
             buy = true;
         }
         else{}
@@ -92,7 +92,7 @@ public class Start : MonoBehaviour
             PlayerData.rejuvenation++;
             RejuvButtonText.text = "Bought";
             RejuvButton.enabled = false;
-            bt.buffTypeNum = 2;
+            bt.buffTypeNum = 3;
             buy = true;
         }else{
             Debug.Log("coins:      " + CoinEarned.spent + " " + CoinEarned.totalEarnedCoins);
@@ -113,7 +113,7 @@ public class Start : MonoBehaviour
             CoinEarned.totalEarnedCoins -= 70;
             CoinEarned.spent = 70;
             CoinEarned.fallenProtect = true;
-            bt.buffTypeNum = 3;
+            bt.buffTypeNum = 4;
             buy = true;
         }else{}
         
@@ -134,7 +134,7 @@ public class Start : MonoBehaviour
         if (buy) {
             buy = false;
         } else {
-            bt.buffTypeNum = 4;
+            bt.buffTypeNum = 0;
         }
     }
 

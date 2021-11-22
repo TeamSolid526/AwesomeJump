@@ -76,19 +76,19 @@ public class BonusGenerator : MonoBehaviour
                 Vector3 bonusPos = cameraPos.position;
                 bonusPos.z = 0;
                 bonusPos.y += 8f;
-                if (bt.buffTypeNum == 0)
+                if (bt.buffTypeNum == 1)
                 {
                     bonus = Instantiate(shieldPrefab, bonusPos, Quaternion.identity);                                   
                 }
-                else if (bt.buffTypeNum == 1) 
+                else if (bt.buffTypeNum == 2) 
                 {
                     bonus = Instantiate(boosterPrefab, bonusPos, Quaternion.identity);                   
                 } 
-                else if (bt.buffTypeNum == 2)
+                else if (bt.buffTypeNum == 3)
                 {
                     bonus = Instantiate(rejuvenationPrefab, bonusPos, Quaternion.identity);                   
                 }
-                else if (bt.buffTypeNum == 3)
+                else if (bt.buffTypeNum == 4)
                 {
                     bonus = Instantiate(fallenProtectPrefab, bonusPos, Quaternion.identity);                                   
                 }
