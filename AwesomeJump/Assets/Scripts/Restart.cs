@@ -9,7 +9,7 @@ public class Restart : MonoBehaviour
     // Start is called before the first frame update
     public void RestartGame()
     {
-        SceneManager.LoadScene("ChoosingBuff");
+        SceneManager.LoadScene("SampleScene");
         UnityEngine.Debug.Log("sssssssssss");
         print("ssssss");
     }

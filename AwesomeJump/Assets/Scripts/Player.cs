@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     LineRenderer lr;
     GameObject targetBoard;
     Vector3 lineStartPoint;
+    public TutorialScene tutorial;
     public bool hooked = false;
     public bool jump = true;
     public int countSameColor = 0;
@@ -31,10 +32,6 @@ public class Player : MonoBehaviour
 
     public float JUMPFORCE = 10f;
     public int maxHealth = 0;
-
-    public Texture2D cursorTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;
 
     public float buttondirection = 0;
     private bool buttonLeft;
@@ -80,8 +77,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
-        //Texture2D RGBA32Texture = ChangeFormat(cursorTexture, TextureFormat.RGBA32);
-        //cursorTexture.Resize(100,100);
         Debug.Log(jump);
         // Debug.Log(rejBooster);
         rejBooster = 1.2f;
@@ -129,15 +124,13 @@ public class Player : MonoBehaviour
             }
 
         //storeHitPos: cannot click to the point below it
-            if (hitData) {
-                if (hitData.transform.gameObject.GetComponent<Platform>() && 
-                    storeHitPos.y > transform.position.y &&
-                    Input.GetMouseButtonDown(0)) {
-                    targetBoard = hitData.transform.gameObject;
-                    hooked = true;
-                    
-                    //float distance = ((Vector2)targetBoard.transform.position - (Vector2)transform.position).magnitude;                   
-                }
+            if (hitData && Input.GetMouseButtonDown(0) && storeHitPos.y > transform.position.y) {
+                targetBoard = hitData.transform.gameObject;
+                float distance = ((Vector2)targetBoard.transform.position - (Vector2)transform.position).magnitude;
+                hooked = true;
+                // rb.gravityScale = 1;
+                
+                
             }
         }
         if(transform.position.y > highestY){
@@ -145,7 +138,6 @@ public class Player : MonoBehaviour
         }
         healthText.text = "Health: " + health.ToString();
         if(health > maxHealth){
-            
             maxHealth = health;
         }
 
@@ -159,15 +151,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() {
         if(jump == false){
-            //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-            Color c1 = new Color(0.54f, 0.31f, 0.21f, 1);
-            //Color c2 = new Color(1, 1, 1, 0);
-            lr.material = new Material(Shader.Find("Sprites/Default"));
-            lr.startColor = c1;
-            lr.endColor = c1;
             lr.positionCount =2;
             lineStartPoint = rb.position;
-            lr.SetPosition(0, lineStartPoint);
+
+                lr.SetPosition(0, lineStartPoint);
             if(rb.position.x > 7.5f){
                 Vector2 position = rb.position;
                 position.x = -7.5f;
@@ -180,13 +167,9 @@ public class Player : MonoBehaviour
             }
         
             if (hooked) {
-                if (rb.position.y >= targetBoard.transform.position.y) {
-                    hooked = false;
-                    rb.velocity = Vector2.zero;
-                } else {
-                    rb.velocity = direction * 5f;
-                    lr.SetPosition(1, targetBoard.transform.position);
-                }            
+    
+                rb.velocity = direction * 5f;
+                lr.SetPosition(1, targetBoard.transform.position);            
             }
             else {
                 Vector2 velocity = rb.velocity;
@@ -198,7 +181,6 @@ public class Player : MonoBehaviour
         }
         else{
             lr.positionCount = 0;
-            //Cursor.SetCursor(null, Vector2.zero, cursorMode);
         }
 
     }
@@ -231,22 +213,22 @@ public class Player : MonoBehaviour
                 v.y = JUMPFORCE;
                 rb.velocity = v;
                 //Platform boardScript = (Platform)other.gameObject.GetComponent(typeof(Platform));
-                if (jump)
-                {
-                    Platform board = other.gameObject.GetComponent<Platform>();                
-                    SpriteRenderer sr = GetComponent<SpriteRenderer>();
-                    Vector3 playerColor = new Vector3(sr.color[0], sr.color[1], sr.color[2]);
-                    if (board.color == playerColor) {
-                        countSameColor++;
-                        if (countSameColor == 3) {
-                            jump = false;
-                            countSameColor = 0;
-                        }
-                    } else {
-                        countSameColor = 0;
-                    }
+                Platform board = other.gameObject.GetComponent<Platform>();                
+                SpriteRenderer sr = GetComponent<SpriteRenderer>();
+                Vector3 playerColor = new Vector3(sr.color[0], sr.color[1], sr.color[2]);
+                if (board.color == playerColor) {
+                    countSameColor++;
+                } else {
+                    countSameColor = 0;
                 }
-                
+                if (countSameColor == 3) {
+                    Time.timeScale = 0;
+                    jump = false;
+                    countSameColor = 0;
+                    tutorial.Setup();
+            
+                    // Time.timeScale = 1;
+                }
         }
         // Debug.Log(other.collider.gameObject.name);
         // Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
@@ -260,22 +242,11 @@ public class Player : MonoBehaviour
       
             
     }
+     private void changeMovement(){
 
-    private void changeMovement(){
         if(jump == true){
             jump = !jump;
         }
+
     }
-
-    // private Texture2D ChangeFormat(Texture2D oldTexture, TextureFormat newFormat)
-    // {
-    //     //Create new empty Texture
-    //     Texture2D newTex = new Texture2D(2, 2, newFormat, false);
-    //     //Copy old texture pixels into new one
-    //     newTex.SetPixels(oldTexture.GetPixels());
-    //     //Apply
-    //     newTex.Apply();
-
-    //     return newTex;
-    // }
 }

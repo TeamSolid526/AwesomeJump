@@ -8,8 +8,7 @@ public class Coin : MonoBehaviour
     private CoinCounter ct;
     void Start()
     {
-        ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>(); 
-            
+        ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();        
     }
 
     // Update is called once per frame

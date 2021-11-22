@@ -37,9 +37,6 @@ public class Platform : MonoBehaviour
     float displacement = 0;
     float moveDir = 1f;
 
-    private GameObject anchorTexture;
-    private GameObject Character;
-
     private List<string> platformTypes = new List<string>() { "buff", "debuff" };
     private static readonly System.Random getrandom = new System.Random();
 
@@ -64,9 +61,6 @@ public class Platform : MonoBehaviour
             newColor[3] = 0.3f;
             spriteRenderer.color = newColor;
         }
-
-        anchorTexture = transform.Find("Anchor").gameObject;
-        Character = GameObject.Find("Character");
     }
 
     // Function to reverse the property of board
@@ -125,16 +119,7 @@ public class Platform : MonoBehaviour
         if (this.transform.position.y < stageDimensions.y) {
             Destroy(this.gameObject);
         }
-        if (!Character.GetComponent<Player>().jump) {
-            Sprite sp = anchorTexture.GetComponent<ChangeAnchorTexture>().AncherSprite;
-            anchorTexture.GetComponent<SpriteRenderer>().sprite = sp;
-            Vector3 localScale = anchorTexture.transform.localScale;
-            localScale.x = 0.3f;
-            localScale.y = 0.6f;
-            anchorTexture.transform.localScale = localScale;
-        } else {
-            anchorTexture.GetComponent<SpriteRenderer>().sprite = null;
-        }
+
     }
 
     void FixedUpdate() 

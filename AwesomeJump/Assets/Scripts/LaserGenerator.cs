@@ -22,16 +22,7 @@ public class LaserGenerator : MonoBehaviour
 	{
 		//InvokeRepeating("generateLaser", 10.0f, 10.0f);
 		timer = 30.0f;
-		order = new float[]{-0.005f*Screen.width,0f,0.005f*Screen.width};
-		Vector3 genPosition = new Vector3(200f, cameraPos.position.y+6f, 0);
-		Instantiate(LaserLeft, genPosition, Quaternion.identity);
-		LaserLeft.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
-		genPosition = new Vector3(200f, cameraPos.position.y+6f, 0);
-		Instantiate(LaserMid, genPosition, Quaternion.identity);
-		LaserMid.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
-		genPosition = new Vector3(200f, cameraPos.position.y+6f, 0);
-		Instantiate(LaserRight, genPosition, Quaternion.identity);
-		LaserRight.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
+		order = new float[]{-5f,0f,5f};
 	}
 
 	private void generateLaser()
@@ -42,13 +33,10 @@ public class LaserGenerator : MonoBehaviour
 		}
 		Vector3 genPosition = new Vector3(order[sequence], cameraPos.position.y+6f, 0);
 		Instantiate(LaserLeft, genPosition, Quaternion.identity);
-		LaserLeft.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
 		genPosition = new Vector3(order[(sequence+1)%3], cameraPos.position.y+6f, 0);
 		Instantiate(LaserMid, genPosition, Quaternion.identity);
-		LaserMid.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
 		genPosition = new Vector3(order[(sequence+2)%3], cameraPos.position.y+6f, 0);
 		Instantiate(LaserRight, genPosition, Quaternion.identity);
-		LaserRight.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
 		laserNum++;
 	}
 	

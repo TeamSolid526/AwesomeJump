@@ -64,7 +64,7 @@ public static class PlayerData
         Debug.Log("buffString: " + buffString);
         AnalyticsResult res = Analytics.CustomEvent("PlayerData", data);
         Debug.Log("Upload player data" + res);
-        //clear();
+        clear();
     }
 
     // Reset user data when player dead.

@@ -12,13 +12,11 @@ public class GameOver : MonoBehaviour
     public Transform character;
     public GameOverScene GameOverScene;
     public int score;
-    public Score findScore;
     private bool flag = true;
     private bool rebornFlag = false;
     public float maxHealth;
     private bool protect;
     private float JUMPFORCE = 30f;
-    private CoinCounter ct;
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
@@ -38,34 +36,24 @@ public class GameOver : MonoBehaviour
         }
         if(flag &&( character.position.y < cameraPos.position.y - 6f || character.gameObject.GetComponent<Player>().health <= 0)){
             //scoreText.text = "Game Over.";
-        
-            score = GameObject.Find("Canvas/Score").GetComponent<Score>().max;
-         
-           
-            
+            score = GameObject.Find("Score").GetComponent<Score>().max;
             maxHealth = character.gameObject.GetComponent<Player>().maxHealth;
-            ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();    
-            Debug.Log("maxHealth");
-          
-            CoinEarned.totalEarnedCoins += ct.totalCoins;
+            Debug.Log(score);
             // AnalyticsEvent.GameOver("saveHeight", new Dictionary<string,object>{{"height",character.position.y}});
             PlayerData.score = score;
             PlayerData.height_score = Math.Max(PlayerData.height_score, score);
             PlayerData.health = maxHealth;
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
-                // GameObject.Find("GameOverScene/GameOverText").GetComponent<Text>().text ="Game Over-Ahhh!";
             }
             else if(character.gameObject.GetComponent<Player>().health <= 0){
                 PlayerData.failWay = "negative points";
-                // GameObject.Find("GameOverScene/GameOverText").GetComponent<Text>().text = "Game Over-You ran out of Health!";
             }
             // TODO: uncomment this function to upload data to dashboard
             PlayerData.debug();
             PlayerData.UploadData();
-            
-            GameOverScene.Setup();
             PlayerData.clear();
+            GameOverScene.Setup();
             flag = false;
         }
     }
