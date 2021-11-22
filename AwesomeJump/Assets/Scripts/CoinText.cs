@@ -11,11 +11,12 @@ public class CoinText : MonoBehaviour
     void Start()
     {
      ct = GameObject.Find("CoinCounter").GetComponent<CoinCounter>();    
+     ct.totalCoins = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-     coin.text = "Coins:"+ct.totalCoins.ToString("0");    
+     coin.text = "Coins:"+ct.totalCoins.ToString();    
     }
 }

@@ -54,15 +54,18 @@ public class GameOver : MonoBehaviour
             PlayerData.health = maxHealth;
             if(character.position.y < cameraPos.position.y - 6f){
                  PlayerData.failWay = "fall out";
+                // GameObject.Find("GameOverScene/GameOverText").GetComponent<Text>().text ="Game Over-Ahhh!";
             }
             else if(character.gameObject.GetComponent<Player>().health <= 0){
                 PlayerData.failWay = "negative points";
+                // GameObject.Find("GameOverScene/GameOverText").GetComponent<Text>().text = "Game Over-You ran out of Health!";
             }
             // TODO: uncomment this function to upload data to dashboard
             PlayerData.debug();
             PlayerData.UploadData();
-            PlayerData.clear();
+            
             GameOverScene.Setup();
+            PlayerData.clear();
             flag = false;
         }
     }
