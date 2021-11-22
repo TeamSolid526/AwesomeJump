@@ -129,7 +129,7 @@ public class Platform : MonoBehaviour
             Sprite sp = anchorTexture.GetComponent<ChangeAnchorTexture>().AncherSprite;
             anchorTexture.GetComponent<SpriteRenderer>().sprite = sp;
             Vector3 localScale = anchorTexture.transform.localScale;
-            localScale.x = 0.3f;
+            localScale.x = 0.15f;
             localScale.y = 0.6f;
             anchorTexture.transform.localScale = localScale;
         } else {
