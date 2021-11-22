@@ -16,7 +16,7 @@ public class Start : MonoBehaviour
     private Button RejuvButton;
     private Button FallenProtectButton;
     private CoinCounter ct;
-    private int buff = 4;
+    private static bool buy = false;
 
     public void Awake()
     {
@@ -54,7 +54,7 @@ public class Start : MonoBehaviour
             CoinEarned.spent = 50;
             CoinEarned.shield = true;
             bt.buffTypeNum = 0;
-            buff = 0;
+            buy = true;
         }
         else{
             Debug.Log("coins:      " + CoinEarned.spent + " " + CoinEarned.totalEarnedCoins);
@@ -74,7 +74,7 @@ public class Start : MonoBehaviour
             CoinEarned.spent = 100;
             CoinEarned.booster = true;
             bt.buffTypeNum = 1;
-            buff = 1;
+            buy = true;
         }
         else{}
         // SceneManager.LoadScene("SampleScene");
@@ -93,7 +93,7 @@ public class Start : MonoBehaviour
             RejuvButtonText.text = "Bought";
             RejuvButton.enabled = false;
             bt.buffTypeNum = 2;
-            buff = 2;
+            buy = true;
         }else{
             Debug.Log("coins:      " + CoinEarned.spent + " " + CoinEarned.totalEarnedCoins);
         }
@@ -114,7 +114,7 @@ public class Start : MonoBehaviour
             CoinEarned.spent = 70;
             CoinEarned.fallenProtect = true;
             bt.buffTypeNum = 3;
-            buff = 3;
+            buy = true;
         }else{}
         
     }
@@ -131,7 +131,11 @@ public class Start : MonoBehaviour
         RejuvButton.enabled = true;
         FallenProtectButton.enabled = true;
         
-        bt.buffTypeNum = buff;
+        if (buy) {
+            buy = false;
+        } else {
+            bt.buffTypeNum = 4;
+        }
     }
 
     public void resetButton() {
