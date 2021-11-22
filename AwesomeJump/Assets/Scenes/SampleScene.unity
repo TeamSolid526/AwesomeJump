@@ -2976,7 +2976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1469351692}
         m_TargetAssemblyTypeName: OpenUI, Assembly-CSharp
-        m_MethodName: onclickDeactive
+        m_MethodName: onclickDeactiveAndConitue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3905,12 +3905,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751622997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dcc148ecfc595c4da67ab817ab23c76, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e5d7cd0d29e14964bdad2dbb55aca35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  score: {fileID: 1255539817}
-  player: {fileID: 1269469355}
 --- !u!114 &1751623000
 MonoBehaviour:
   m_ObjectHideFlags: 0
