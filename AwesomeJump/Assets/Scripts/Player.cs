@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     GameObject targetBoard;
     Vector3 lineStartPoint;
     public TutorialScene tutorial;
-    public bool boardTutorial = true;
+    public static bool boardTutorial = true;
     public bool hooked = false;
     public bool jump = true;
     public int countSameColor = 0;
