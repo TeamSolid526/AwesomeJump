@@ -44,14 +44,14 @@ public class Start : MonoBehaviour
     public void StartGameWithShield()
     {      
         
-        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 50){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 15){
             resetButton();
             PlayerData.shield++;
       //  SceneManager.LoadScene("SampleScene");
             ShieldButtonText.text ="Bought";
             ShieldButton.enabled = false;
-            CoinEarned.totalEarnedCoins -= 50;
-            CoinEarned.spent = 50;
+            CoinEarned.totalEarnedCoins -= 15;
+            CoinEarned.spent = 15;
             CoinEarned.shield = true;
             bt.buffTypeNum = 1;
             buy = true;
@@ -65,13 +65,13 @@ public class Start : MonoBehaviour
     public void StartGameWithBooster()
     {      
         
-        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 100){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 30){
             resetButton();
             PlayerData.booster++;
             BoosterButtonText.text = "Bought";
             BoosterButton.enabled = false;
-            CoinEarned.totalEarnedCoins -= 100;
-            CoinEarned.spent = 100;
+            CoinEarned.totalEarnedCoins -= 30;
+            CoinEarned.spent = 30;
             CoinEarned.booster = true;
             bt.buffTypeNum = 2;
             buy = true;
@@ -84,10 +84,10 @@ public class Start : MonoBehaviour
     public void StartGameWithRejuvenation()
     {      
         
-        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 80){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 25){
             resetButton();
-            CoinEarned.totalEarnedCoins -= 80;
-            CoinEarned.spent = 80;
+            CoinEarned.totalEarnedCoins -= 25;
+            CoinEarned.spent = 25;
             CoinEarned.rejuvenation = true;
             PlayerData.rejuvenation++;
             RejuvButtonText.text = "Bought";
@@ -104,14 +104,14 @@ public class Start : MonoBehaviour
     public void StartGameWithFallenProtect()
     {      
        
-        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 70){
+        if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 35){
             resetButton();
              PlayerData.fallenProtect++;
         // SceneManager.LoadScene("SampleScene");
             FallenProtectButtonText.text = "Bought";
             FallenProtectButton.enabled = false;
-            CoinEarned.totalEarnedCoins -= 70;
-            CoinEarned.spent = 70;
+            CoinEarned.totalEarnedCoins -= 35;
+            CoinEarned.spent = 35;
             CoinEarned.fallenProtect = true;
             bt.buffTypeNum = 4;
             buy = true;
