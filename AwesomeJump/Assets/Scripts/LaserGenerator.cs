@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class LaserGenerator : MonoBehaviour
 {
+	public static int judge = 0;
     public GameObject LaserLeft;
 	public GameObject LaserMid;
 	public GameObject LaserRight;
 	public Transform cameraPos;
 	public float timer = 30.0f;
+	public GameObject tutorial;
 	//public Transform text;
 	private GameObject time;
 	private Score score;
@@ -33,9 +35,15 @@ public class LaserGenerator : MonoBehaviour
 		Instantiate(LaserRight, genPosition, Quaternion.identity);
 		LaserRight.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
 	}
-
 	private void generateLaser()
-	{
+	{	
+		if(judge == 0){
+			Time.timeScale = 0;
+			LaserTutorialScene t = tutorial.GetComponent<LaserTutorialScene>();
+			t.Setup();
+			judge = 1;
+		}
+		
 		sequence ++;
 		if(sequence >= 3){
 			sequence = 0;
@@ -63,6 +71,7 @@ public class LaserGenerator : MonoBehaviour
 		if((int)timer <= 0 && laserNum <= 0){
 			generateLaser();
 			timer = 30f;
+
 		}
 	}
 }

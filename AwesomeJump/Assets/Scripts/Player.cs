@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     LineRenderer lr;
     GameObject targetBoard;
     Vector3 lineStartPoint;
+    public TutorialScene tutorial;
+    public static bool boardTutorial = true;
     public bool hooked = false;
     public bool jump = true;
     public int countSameColor = 0;
@@ -239,8 +241,17 @@ public class Player : MonoBehaviour
                     if (board.color == playerColor) {
                         countSameColor++;
                         if (countSameColor == 3) {
+                            if (boardTutorial){
+                                Time.timeScale = 0;
+                                jump = false;
+                                countSameColor = 0;
+                                tutorial.Setup();
+                                boardTutorial = false;
+                            }
+                            else{
                             jump = false;
                             countSameColor = 0;
+                            }
                         }
                     } else {
                         countSameColor = 0;
