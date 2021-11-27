@@ -8,14 +8,14 @@ public class Start : MonoBehaviour
 {
     BuffType bt;
     public CoinEarned CoinEarned;
-    private Text ShieldButtonText;
-    private Text BoosterButtonText;
-    private Text RejuvButtonText;
-    private Text FallenProtectButtonText;
-    private Button ShieldButton;
-    private Button BoosterButton;
-    private Button RejuvButton;
-    private Button FallenProtectButton;
+    public Text ShieldButtonText;
+    public Text BoosterButtonText;
+    public Text RejuvButtonText;
+    public Text FallenProtectButtonText;
+    public Button ShieldButton;
+    public Button BoosterButton;
+    public Button RejuvButton;
+    public Button FallenProtectButton;
     private CoinCounter ct;
     private static bool buy = false;
 
@@ -25,14 +25,14 @@ public class Start : MonoBehaviour
             bt = GameObject.Find("Buff").GetComponent<BuffType>();  
       
         if (SceneManager.GetActiveScene().name == "ChoosingBuff"){//not in the mainMenu scene
-            ShieldButtonText = GameObject.Find("Shield/Text").GetComponent<Text>();
-            ShieldButton = GameObject.Find("Shield").GetComponent<Button>();
-            BoosterButtonText = GameObject.Find("Booster/Text").GetComponent<Text>();
-            BoosterButton = GameObject.Find("Booster").GetComponent<Button>();
-            RejuvButtonText = GameObject.Find("Rejuvenation/Text").GetComponent<Text>();
-            RejuvButton = GameObject.Find("Rejuvenation").GetComponent<Button>();
-            FallenProtectButtonText = GameObject.Find("FallenProtect/Text").GetComponent<Text>();
-            FallenProtectButton = GameObject.Find("FallenProtect").GetComponent<Button>();
+            // ShieldButtonText = GameObject.Find("Shield/Text").GetComponent<Text>();
+            // ShieldButton = GameObject.Find("Shield").GetComponent<Button>();
+            // BoosterButtonText = GameObject.Find("Booster/Text").GetComponent<Text>();
+            // BoosterButton = GameObject.Find("Booster").GetComponent<Button>();
+            // RejuvButtonText = GameObject.Find("Rejuvenation/Text").GetComponent<Text>();
+            // RejuvButton = GameObject.Find("Rejuvenation").GetComponent<Button>();
+            // FallenProtectButtonText = GameObject.Find("FallenProtect/Text").GetComponent<Text>();
+            // FallenProtectButton = GameObject.Find("FallenProtect").GetComponent<Button>();
         }
         
     }
