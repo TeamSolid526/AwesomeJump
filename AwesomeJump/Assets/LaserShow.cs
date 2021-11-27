@@ -19,7 +19,10 @@ public class LaserShow : MonoBehaviour
 	
 		Debug.Log("Screen Width : " + Screen.width);
         //order = new float[]{323.1f,563.8f,790.6f};
-		order = new float[] {0.3f*screenWidth, 0.5f*screenWidth, 0.7f*screenWidth};
+        Debug.Log("Left:"+left.transform.position);
+        Debug.Log("Right:"+right.transform.position);
+        Debug.Log("Mid"+mid.transform.position);
+		order = new float[] {0.24f*screenWidth, 0.5f*screenWidth, 0.759f*screenWidth};
     }
 
     // Update is called once per frame
