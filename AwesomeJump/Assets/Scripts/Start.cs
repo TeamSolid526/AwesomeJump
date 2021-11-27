@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Start : MonoBehaviour
 {
     BuffType bt;
-    public CoinEarned coinManager;
+    public CoinEarned CoinEarned;
     private Text ShieldButtonText;
     private Text BoosterButtonText;
     private Text RejuvButtonText;
