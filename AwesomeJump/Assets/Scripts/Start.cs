@@ -44,12 +44,16 @@ public class Start : MonoBehaviour
 
     public void StartGameWithShield()
     {      
-        
+      
         if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 15){
+            
             resetButton();
+            // Debug.Log("shield"+PlayerData.shield);
             PlayerData.shield++;
       //  SceneManager.LoadScene("SampleScene");
+            Debug.Log("SieldButtonText"+ShieldButtonText.text );
             ShieldButtonText.text ="Bought";
+            Debug.Log("SieldButtonText"+ShieldButtonText.text );
             ShieldButton.enabled = false;
             CoinEarned.totalEarnedCoins -= 15;
             CoinEarned.spent = 15;
@@ -122,6 +126,7 @@ public class Start : MonoBehaviour
     public void StartGameWithoutBoost()
     {      
         SceneManager.LoadScene("SampleScene");
+        resetButton();
         CoinEarned.spent = 0;
         ShieldButtonText.text = "Buy";
         BoosterButtonText.text = "Buy";
@@ -141,10 +146,12 @@ public class Start : MonoBehaviour
 
     public void resetButton() {
         CoinEarned.totalEarnedCoins += CoinEarned.spent;
+        
         ShieldButtonText.text = "Buy";
         BoosterButtonText.text = "Buy";
         RejuvButtonText.text = "Buy";
         FallenProtectButtonText.text = "Buy";
+        Debug.Log("ShieldButton"+ShieldButton);
         ShieldButton.enabled = true;
         BoosterButton.enabled = true;
         RejuvButton.enabled = true;
