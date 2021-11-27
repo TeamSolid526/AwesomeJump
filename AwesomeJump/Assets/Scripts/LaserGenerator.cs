@@ -34,6 +34,7 @@ public class LaserGenerator : MonoBehaviour
 		genPosition = new Vector3(200f, cameraPos.position.y+6f, 0);
 		Instantiate(LaserRight, genPosition, Quaternion.identity);
 		LaserRight.transform.localScale = new Vector3(0.005f*Screen.width, 0.3f, 0.0f);
+		Debug.Log("screen width"+Screen.width);
 	}
 	private void generateLaser()
 	{	
