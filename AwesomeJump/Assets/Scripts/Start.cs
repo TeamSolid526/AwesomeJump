@@ -25,14 +25,14 @@ public class Start : MonoBehaviour
             bt = GameObject.Find("Buff").GetComponent<BuffType>();  
       
         if (SceneManager.GetActiveScene().name == "ChoosingBuff"){//not in the mainMenu scene
-            ShieldButtonText = GameObject.Find("Shield/Text").GetComponent<Text>();
-            ShieldButton = GameObject.Find("Shield").GetComponent<Button>();
-            BoosterButtonText = GameObject.Find("Booster/Text").GetComponent<Text>();
-            BoosterButton = GameObject.Find("Booster").GetComponent<Button>();
-            RejuvButtonText = GameObject.Find("Rejuvenation/Text").GetComponent<Text>();
-            RejuvButton = GameObject.Find("Rejuvenation").GetComponent<Button>();
-            FallenProtectButtonText = GameObject.Find("FallenProtect/Text").GetComponent<Text>();
-            FallenProtectButton = GameObject.Find("FallenProtect").GetComponent<Button>();
+            // ShieldButtonText = GameObject.Find("Shield/Text").GetComponent<Text>();
+            // ShieldButton = GameObject.Find("Shield").GetComponent<Button>();
+            // BoosterButtonText = GameObject.Find("Booster/Text").GetComponent<Text>();
+            // BoosterButton = GameObject.Find("Booster").GetComponent<Button>();
+            // RejuvButtonText = GameObject.Find("Rejuvenation/Text").GetComponent<Text>();
+            // RejuvButton = GameObject.Find("Rejuvenation").GetComponent<Button>();
+            // FallenProtectButtonText = GameObject.Find("FallenProtect/Text").GetComponent<Text>();
+            // FallenProtectButton = GameObject.Find("FallenProtect").GetComponent<Button>();
         }
         
     }
