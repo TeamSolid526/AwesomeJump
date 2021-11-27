@@ -1286,10 +1286,10 @@ MonoBehaviour:
     health\n- Pass Laser and boards with different color from the character will
     lose health\n- Continuously landing on three board with the same color as character
     will award you a hook which enable you to reach any boards in the screen range.\n-
-    Choose the buff before the game to survive longer.\n       - Shield: counteract
-    the loss from a laser\n       - Booster: Get a boost up for a long distance\n      
-    - Rejuvenation: Get additional health points\n       - FallenProtection: Get
-    another life when falling out of the screen\n"
+    Choose the buff before the game to survive longer.\n       - Shield: Protect
+    you from being harmed by the laser\n       - Booster: Get a boost up for a long
+    distance\n       - Rejuvenation: Get additional health points\n       - FallenProtection:
+    Act as a safety net when you're falling out of the game"
 --- !u!222 &1166199965
 CanvasRenderer:
   m_ObjectHideFlags: 0

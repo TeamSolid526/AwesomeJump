@@ -10,7 +10,7 @@ public class TutorialScene : MonoBehaviour
     public void Setup() {
         // player.enabled = false;
         gameObject.SetActive(true);
-        TutorialText.text = "When you continuously jump on three boards with the same color as your character’s, you will get a hook.\n Now try to click the left mouse button on the board to hook your character on it";
+        TutorialText.text = "When you continuously jump on three boards with the same color as your character’s, you will get a hook.\nNow try to click the left mouse button on the board to hook your character on it";
     }
 
     
