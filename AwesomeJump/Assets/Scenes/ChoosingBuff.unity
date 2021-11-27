@@ -1151,6 +1151,10 @@ MonoBehaviour:
   BoosterButtonText: {fileID: 0}
   RejuvButtonText: {fileID: 0}
   FallenProtectButtonText: {fileID: 0}
+  ShieldButton: {fileID: 0}
+  BoosterButton: {fileID: 0}
+  RejuvButton: {fileID: 0}
+  FallenProtectButton: {fileID: 0}
 --- !u!1 &944051846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1721,10 @@ MonoBehaviour:
   BoosterButtonText: {fileID: 841477605}
   RejuvButtonText: {fileID: 1681149717}
   FallenProtectButtonText: {fileID: 1798559644}
+  ShieldButton: {fileID: 2036566412}
+  BoosterButton: {fileID: 1501919114}
+  RejuvButton: {fileID: 1892805375}
+  FallenProtectButton: {fileID: 1486385610}
 --- !u!114 &1486385610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1876,10 @@ MonoBehaviour:
   BoosterButtonText: {fileID: 841477605}
   RejuvButtonText: {fileID: 1681149717}
   FallenProtectButtonText: {fileID: 1798559644}
+  ShieldButton: {fileID: 2036566412}
+  BoosterButton: {fileID: 1501919114}
+  RejuvButton: {fileID: 1892805375}
+  FallenProtectButton: {fileID: 1486385610}
 --- !u!114 &1501919114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,6 +2364,10 @@ MonoBehaviour:
   BoosterButtonText: {fileID: 841477605}
   RejuvButtonText: {fileID: 1681149717}
   FallenProtectButtonText: {fileID: 1798559644}
+  ShieldButton: {fileID: 2036566412}
+  BoosterButton: {fileID: 1501919114}
+  RejuvButton: {fileID: 1892805375}
+  FallenProtectButton: {fileID: 1486385610}
 --- !u!114 &1892805375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2657,6 +2673,10 @@ MonoBehaviour:
   BoosterButtonText: {fileID: 841477605}
   RejuvButtonText: {fileID: 1681149717}
   FallenProtectButtonText: {fileID: 1798559644}
+  ShieldButton: {fileID: 2036566412}
+  BoosterButton: {fileID: 1501919114}
+  RejuvButton: {fileID: 1892805375}
+  FallenProtectButton: {fileID: 1486385610}
 --- !u!114 &2036566412
 MonoBehaviour:
   m_ObjectHideFlags: 0
