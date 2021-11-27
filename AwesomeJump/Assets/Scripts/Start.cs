@@ -8,14 +8,14 @@ public class Start : MonoBehaviour
 {
     BuffType bt;
     public CoinEarned CoinEarned;
-    private Text ShieldButtonText;
-    private Text BoosterButtonText;
-    private Text RejuvButtonText;
-    private Text FallenProtectButtonText;
-    private Button ShieldButton;
-    private Button BoosterButton;
-    private Button RejuvButton;
-    private Button FallenProtectButton;
+    public Text ShieldButtonText;
+    public Text BoosterButtonText;
+    public Text RejuvButtonText;
+    public Text FallenProtectButtonText;
+    public Button ShieldButton;
+    public Button BoosterButton;
+    public Button RejuvButton;
+    public Button FallenProtectButton;
     private CoinCounter ct;
     private static bool buy = false;
 
@@ -48,10 +48,13 @@ public class Start : MonoBehaviour
         if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 15){
             
             resetButton();
+            Debug.Log("coinearned"+CoinEarned.totalEarnedCoins + CoinEarned.spent );
             // Debug.Log("shield"+PlayerData.shield);
+            Debug.Log(PlayerData.shield);
             PlayerData.shield++;
+            
       //  SceneManager.LoadScene("SampleScene");
-            Debug.Log("SieldButtonText"+ShieldButtonText.text );
+            Debug.Log(ShieldButtonText );
             ShieldButtonText.text ="Bought";
             Debug.Log("SieldButtonText"+ShieldButtonText.text );
             ShieldButton.enabled = false;
@@ -112,6 +115,7 @@ public class Start : MonoBehaviour
         if(CoinEarned.totalEarnedCoins + CoinEarned.spent >= 35){
             resetButton();
              PlayerData.fallenProtect++;
+           
         // SceneManager.LoadScene("SampleScene");
             FallenProtectButtonText.text = "Bought";
             FallenProtectButton.enabled = false;
@@ -148,13 +152,21 @@ public class Start : MonoBehaviour
         CoinEarned.totalEarnedCoins += CoinEarned.spent;
         
         ShieldButtonText.text = "Buy";
+        Debug.Log("SieldButtonTextreset"+ShieldButtonText.text );
         BoosterButtonText.text = "Buy";
+        Debug.Log("SieldButtonTextreset"+BoosterButtonText.text );
         RejuvButtonText.text = "Buy";
+        Debug.Log("RejuvButtonTextreset"+RejuvButtonText.text );
         FallenProtectButtonText.text = "Buy";
-        Debug.Log("ShieldButton"+ShieldButton);
+        Debug.Log("FallenProtectButtonText"+FallenProtectButtonText.text );
         ShieldButton.enabled = true;
+        Debug.Log("SieldButton"+ShieldButton );
         BoosterButton.enabled = true;
+        Debug.Log("BoosterButton"+BoosterButton );
         RejuvButton.enabled = true;
+        Debug.Log("RejuvButton"+RejuvButton);
+        Debug.Log("FallenProtectButton"+FallenProtectButton);
         FallenProtectButton.enabled = true; 
+      
     }
 }
