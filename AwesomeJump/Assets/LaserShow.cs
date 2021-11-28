@@ -22,7 +22,7 @@ public class LaserShow : MonoBehaviour
         Debug.Log("Left:"+left.transform.position);
         Debug.Log("Right:"+right.transform.position);
         Debug.Log("Mid"+mid.transform.position);
-		order = new float[] {0.24f*screenWidth, 0.5f*screenWidth, 0.759f*screenWidth};
+		order = new float[] {0.18f*screenWidth, 0.50f*screenWidth, 0.84f*screenWidth};
     }
 
     // Update is called once per frame
@@ -39,9 +39,9 @@ public class LaserShow : MonoBehaviour
             right.transform.position = new Vector3(order[(sequence)%3], left.transform.position.y, 0);
         }
         else{
-            left.transform.position = new Vector3(-200, left.transform.position.y, 0);
-            mid.transform.position = new Vector3(-200, left.transform.position.y, 0);
-            right.transform.position = new Vector3(-200, left.transform.position.y, 0);
+            left.transform.position = new Vector3(-300, left.transform.position.y, 0);
+            mid.transform.position = new Vector3(-300, left.transform.position.y, 0);
+            right.transform.position = new Vector3(-300, left.transform.position.y, 0);
         }
         
     }
