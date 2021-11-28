@@ -1146,15 +1146,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b463838d275046289d783eb259d703c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinEarned: {fileID: 0}
-  ShieldButtonText: {fileID: 0}
-  BoosterButtonText: {fileID: 0}
-  RejuvButtonText: {fileID: 0}
-  FallenProtectButtonText: {fileID: 0}
-  ShieldButton: {fileID: 0}
-  BoosterButton: {fileID: 0}
-  RejuvButton: {fileID: 0}
-  FallenProtectButton: {fileID: 0}
+  CoinEarned: {fileID: 1331267122}
+  ShieldButtonText: {fileID: 1354089195}
+  BoosterButtonText: {fileID: 841477605}
+  RejuvButtonText: {fileID: 1681149717}
+  FallenProtectButtonText: {fileID: 1798559644}
+  ShieldButton: {fileID: 2036566412}
+  BoosterButton: {fileID: 1501919114}
+  RejuvButton: {fileID: 1892805375}
+  FallenProtectButton: {fileID: 1486385610}
 --- !u!1 &944051846
 GameObject:
   m_ObjectHideFlags: 0
