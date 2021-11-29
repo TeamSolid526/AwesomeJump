@@ -50,8 +50,8 @@ public class Player : MonoBehaviour
             Sprite sp = buffTexture.GetComponent<ChangeSprite>().shieldSprite;
             buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
             Vector3 localScale = buffTexture.transform.localScale;
-            localScale.x = 0.04f;
-            localScale.y = 0.04f;
+            localScale.x = 0.1f;
+            localScale.y = 0.1f;
             buffTexture.transform.localScale = localScale;
         } 
         else if (fallenProtect)
@@ -59,8 +59,8 @@ public class Player : MonoBehaviour
             Sprite sp = buffTexture.GetComponent<ChangeSprite>().fallenProtectSprite;
             buffTexture.GetComponent<SpriteRenderer>().sprite = sp;
             Vector3 localScale = buffTexture.transform.localScale;
-            localScale.x = 0.8f;
-            localScale.y = 0.2f;
+            localScale.x = 1.6f;
+            localScale.y = 0.4f;
             buffTexture.transform.localScale = localScale;
         }
     }

@@ -5008,19 +5008,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.139676
+      value: 0.17733
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1539676
+      value: 0.1820205
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6785445
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.12
+      value: -1.0123
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489232, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5061,6 +5065,22 @@ PrefabInstance:
     - target: {fileID: 9220550986856489233, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489235, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8508642
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489235, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7798162
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489235, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012443423
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220550986856489235, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07208818
       objectReference: {fileID: 0}
     - target: {fileID: 9220550986856489235, guid: fd2a202ea0bfa4d74bfec84e320efce6, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
